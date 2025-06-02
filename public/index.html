@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/assets/img/favicon.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+
+
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/font-awesome.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/animate.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/jquery.fullPage.css">
+
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/meanmenu.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/nice-select.css">
+  <link rel="stylesheet" href="%PUBLIC_URL%/assets/css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+  <title>KazaSwap - Swap your place, explore the world</title>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+</body>
+
+
+
+
+
+<script src="%PUBLIC_URL%/assets/js/jquery-3.7.1.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/viewport.jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
+<script src="%PUBLIC_URL%/assets/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="assets/js/jquery.fullPage.min.js"></script>  -->
+<script src="%PUBLIC_URL%/assets/js/jquery.meanmenu.min.js"></script>
+<script src="%PUBLIC_URL%/assets/js/main.js"></script>
+<script async="" src="https://cdn.jsdelivr.net/npm/@finsweet/cookie-consent@1/fs-cc.js" fs-cc-mode="opt-in"></script>
+
+
+
+
+<script src="//code.tidio.co/ffjggziapgbo51t0dqrkurpliaodxe9k.js"></script>
+
+
+<script>
+  $(document).ready(function () {
+    $('.my-slider').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      speed: 300,
+      infinite: true,
+      autoplaySpeed: 5000,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1.05,
+          }
+        }
+      ]
+    });
+  });
+
+
+
+</script>
+<script>
+  $(document).ready(function () {
+    $('.my-slider-1').slick({
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: true,
+      dots: true,
+      speed: 300,
+      infinite: true,
+      autoplaySpeed: 5000,
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
+    });
+  });
+
+
+
+</script>
+
+
+<!-- <script>
+      const scrollers = document.querySelectorAll(".scroller");
+
+// If a user hasn't opted in for recuded motion, then we add the animation
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+  scrollers.forEach((scroller) => {
+    // add data-animated="true" to every `.scroller` on the page
+    scroller.setAttribute("data-animated", true);
+
+    // Make an array from the elements within `.scroller-inner`
+    const scrollerInner = scroller.querySelector(".scroller__inner");
+    const scrollerContent = Array.from(scrollerInner.children);
+
+    // For each item in the array, clone it
+    // add aria-hidden to it
+    // add it into the `.scroller-inner`
+    scrollerContent.forEach((item) => {
+      const duplicatedItem = item.cloneNode(true);
+      duplicatedItem.setAttribute("aria-hidden", true);
+      scrollerInner.appendChild(duplicatedItem);
+    });
+  });
+}
+    </script> -->
+
+<!-- 
+     <script>
+ const setStickyPositionSection = () => {
+    let windowHeight = window.innerHeight
+    stickyElements.forEach(function (element, index) {
+      if(element.clientHeight > windowHeight ) {
+        let difference = element.clientHeight - windowHeight
+        element.style.top = "-" + difference + "px"
+      }
+    });
+  }
+    function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.bottom >= 0
+    );
+  }
+ 
+  const sections = document.querySelectorAll('.section')
+  const stickyElements = document.querySelectorAll('.stickyk')
+  function calculateVisibleHeight(element) {
+    let windowHeight = window.innerHeight;
+    let blockRect = element.getBoundingClientRect();
+    let elementHeight = element.offsetHeight;
+    let blockTop = Math.max(blockRect.top, 0);
+    let visibleHeightInPercent = (100 * (windowHeight - blockTop)) / windowHeight ;
+    return Math.ceil(visibleHeightInPercent);
+  }
+  function mapValue(value, fromMin, fromMax, toMin, toMax) {
+    return ((value - fromMin) / (fromMax - fromMin)) * (toMax - toMin) + toMin;
+  }
+  function handleStickySection() {
+    sections.forEach(function (section, index) {
+      let visibleHeight = calculateVisibleHeight(section);
+      let prevSection = sections[index-1];
+      if(prevSection && visibleHeight >= 30 && visibleHeight <= 80) {
+        const sectionBack = prevSection.querySelector('.section-back');
+        prevSection.style.transform = `translateY(-${mapValue(visibleHeight, 30, 80, 0, 100) / 2}px)`;
+        sectionBack.style.opacity = mapValue(visibleHeight, 30, 80, 0, 100) + "%";
+        prevSection.style.opacity = 1;
+      } else if (prevSection && visibleHeight > 80 && visibleHeight < 100 ) {
+        const sectionBack = prevSection.querySelector('.section-back');
+        prevSection.style.transform = `translateY(-${mapValue(80, 30, 80, 0, 100) / 2}px)`;
+        sectionBack.style.opacity = mapValue(80, 30, 80, 0, 100) + "%";
+        prevSection.style.opacity = 1;
+      } else if (prevSection && visibleHeight >= 100) {
+        prevSection.style.opacity = 0;
+      }
+      if(prevSection && visibleHeight >= 0 && visibleHeight <= 100) {
+        prevSection.style.transform = `translateY(-${visibleHeight / 2}px)`;
+      }
+    });
+  }
+   function isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+    return rect.bottom <= windowHeight * 0.5;
+  }
+  const handleWindowScroll = () => {
+    if(window.innerWidth > 768 && window.innerHeight > 479) {
+      handleStickySection();
+      setStickyPositionSection();
+      !faqItems[0].classList.contains('show') && isElementInViewport(faqItems[0]) && showFirstFaqItem()
+    }
+  }
+  const handleWindowResize = () => {
+    if(window.innerWidth > 768 && window.innerHeight > 479) {
+        setStickyPositionSection();
+        handleStickySection();
+    }
+    initJoinSlider();
+  }
+  const handleWindowLoad = () => {
+    if(window.innerWidth > 768 && window.innerHeight > 479) {
+        setStickyPositionSection();
+        handleStickySection();
+    }
+    initJoinSlider();
+  }
+  const handleOrientationChange = () => {
+    if(window.innerWidth > 768 && window.innerHeight > 479) {
+        setStickyPositionSection();
+        handleStickySection();
+    }
+    initJoinSlider();
+  }
+  function debounce(func, delay) {
+    let timeoutId;
+    return function () {
+      const context = this;
+      const args = arguments;
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func.apply(context, args);
+      }, delay);
+    };
+  }
+    const debouncedResize = debounce(handleWindowResize, 200);
+  window.addEventListener('resize', debouncedResize);
+  window.addEventListener('scroll', handleWindowScroll);
+  window.addEventListener('load', handleWindowLoad);
+    window.addEventListener('orientationchange', handleOrientationChange);
+</script>
+  -->
+
+
+
+</html>

@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  kaza_static:
+    # image: mrajweb/kaza_house_swap:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kaza_house_swap_static:latest
+    container_name: kaza_house_swap_static
+    restart: always
+    ports:
+      - "9732:9732"
+    networks:
+      - kaza-house-swap-network
+    # NO `command:` here → lets the Dockerfile’s `CMD ["nginx", "-g", "daemon off;"]` take effect
+
+networks:
+  kaza-house-swap-network:
+    driver: bridge
