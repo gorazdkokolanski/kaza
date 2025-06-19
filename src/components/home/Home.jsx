@@ -8,6 +8,8 @@ import fullpage from "fullpage.js";
 import $ from "jquery";
 import { Link } from "react-router-dom";
 import homeEarning from "../../assets/img/home-earning-mob.png"
+import { useRef } from "react";
+
 const Home = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
@@ -69,6 +71,7 @@ const Home = () => {
   //     }
   //   };
   // }, []);
+  const swiperRef = useRef(null);
 
   useEffect(() => {
     const sections = document.querySelectorAll(".section");
@@ -85,6 +88,8 @@ const Home = () => {
       });
 
     };
+
+
 
     const calculateVisibleHeight = (element) => {
       let windowHeight = window.innerHeight;
@@ -210,51 +215,75 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    const setupMarquee = (selector, speed, direction = "left") => {
+    // 1) JS-driven infinite marquee helper
+    function setupMarquee(selector, speed = 1, direction = "left") {
       const marquee = document.querySelector(selector);
       if (!marquee) return;
-
-      const originalContent = marquee.innerHTML;
-      const duplicateCount = 2;
-      for (let i = 0; i < duplicateCount; i++) {
-        marquee.innerHTML += originalContent;
-      }
-
-      const contentWidth = marquee.scrollWidth / (duplicateCount + 1);
-      let scrollAmount = direction === "left" ? 0 : -contentWidth;
-      let isHovered = false;
-
-      const startScrolling = () => {
-        if (!isHovered) {
-          scrollAmount += direction === "left" ? -speed : speed;
-
-          if (direction === "left" && Math.abs(scrollAmount) >= contentWidth) {
-            scrollAmount = 0;
-          } else if (direction === "right" && scrollAmount >= 0) {
-            scrollAmount = -contentWidth;
-          }
-
-          marquee.style.transform = `translateX(${scrollAmount}px)`;
+  
+      // duplicate 3× total
+      const original = marquee.innerHTML;
+      marquee.innerHTML = original + original + original;
+  
+      const block = marquee.scrollWidth / 3;
+      let offset = direction === "left" ? 0 : -block;
+      let hover = false;
+  
+      function step() {
+        if (!hover) {
+          offset += direction === "left" ? -speed : speed;
+          if (direction === "left"  && Math.abs(offset) >= block) offset = 0;
+          if (direction === "right" && offset >= 0)             offset = -block;
+          marquee.style.transform = `translateX(${offset}px)`;
         }
-
-        requestAnimationFrame(startScrolling);
-      };
-
-      marquee.addEventListener("mouseover", () => {
-        isHovered = true;
+        requestAnimationFrame(step);
+      }
+  
+      marquee.addEventListener("mouseover", () => (hover = true));
+      marquee.addEventListener("mouseout",  () => (hover = false));
+      step();
+    }
+  
+    // 2) Kick off the two looping marquees
+    setupMarquee(".marquee-inner",  1, "left");
+    setupMarquee(".marquee-inner1", 1, "right");
+  
+    // 3) Duplicate content for the scroll-synced lanes
+    [".marquee-inner2", ".marquee-inner3"].forEach((sel) => {
+      const m = document.querySelector(sel);
+      if (!m) return;
+      const html = m.innerHTML;
+      m.innerHTML = html + html + html;
+    });
+  
+    // 4) Hook up scroll → horizontal offset for lanes 2 & 3
+    const synced = document.querySelectorAll(".marquee-inner2, .marquee-inner3");
+    function onScroll() {
+      const H = window.innerHeight;
+      synced.forEach((m) => {
+        const { top, height } = m.getBoundingClientRect();
+        const block = m.scrollWidth / 3;
+        let prog = (H - top) / (H + height);
+        prog = Math.max(0, Math.min(1, prog));
+  
+        // inner2 → left (-1), inner3 → right (+1)
+        const dir = m.classList.contains("marquee-inner2") ? -1 : 1;
+        // for right-mover we offset start so it enters from left
+        const x = dir * block * prog + (dir === 1 ? -block : 0);
+        m.style.transform = `translateX(${x}px)`;
       });
-      marquee.addEventListener("mouseout", () => {
-        isHovered = false;
-      });
-
-      startScrolling();
+    }
+  
+    window.addEventListener("scroll", onScroll);
+    onScroll(); // initialize
+  
+    return () => {
+      window.removeEventListener("scroll", onScroll);
     };
-
-    setupMarquee(".marquee-inner", 0.5, "left");
-    setupMarquee(".marquee-inner1", 0.5, "right");
-    setupMarquee(".marquee-inner2", 0.5, "left");
-    setupMarquee(".marquee-inner3", 0.5, "right");
   }, []);
+  
+  
+  
+
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -262,29 +291,114 @@ const Home = () => {
 
   useEffect(() => {
     const scrollers = document.querySelectorAll(".scroller");
-
-    // If a user hasn't opted in for reduced motion
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      addAnimation();
-    }
-
-    function addAnimation() {
+  
+    // 1) Disable CSS animation & duplicate content
+    scrollers.forEach((scroller) => {
+      const inner = scroller.querySelector(".scroller__inner");
+      if (!inner) return;
+  
+      scroller.removeAttribute("data-animated");
+      inner.style.animation = "none";
+  
+      Array.from(inner.children).forEach((item) => {
+        const dup = item.cloneNode(true);
+        dup.setAttribute("aria-hidden", "true");
+        inner.appendChild(dup);
+      });
+    });
+  
+    // 2) Scroll-sync handler with flipped direction for data-direction="up"
+    function onScroll() {
+      const vh = window.innerHeight;
       scrollers.forEach((scroller) => {
-        scroller.setAttribute("data-animated", true);
-
-        const scrollerInner = scroller.querySelector(".scroller__inner");
-        if (!scrollerInner) return;
-
-        const scrollerContent = Array.from(scrollerInner.children);
-
-        scrollerContent.forEach((item) => {
-          const duplicatedItem = item.cloneNode(true);
-          duplicatedItem.setAttribute("aria-hidden", "true");
-          scrollerInner.appendChild(duplicatedItem);
-        });
+        const inner = scroller.querySelector(".scroller__inner");
+        if (!inner) return;
+  
+        const { top, height } = scroller.getBoundingClientRect();
+        const maxOffset = inner.scrollHeight - height;
+  
+        let prog = (vh - top) / (vh + height);
+        prog = Math.max(0, Math.min(1, prog));
+  
+        // Default: move up (negative Y). If data-direction="up": move down (positive Y).
+        const dir = scroller.dataset.direction === "up" ?  1 : -1;
+        let y;
+        if(dir==1){
+          y  = inner.offsetHeight - (prog * maxOffset * dir);
+          y*=-1
+          console.log(y)
+        }
+        else{
+          y   = prog * maxOffset * dir;
+        }
+  
+        inner.style.transform = `translateY(${y}px)`;
       });
     }
+  
+    window.addEventListener("scroll", onScroll);
+    onScroll(); // initialize on mount
+  
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
+  
+
+  const movingRef = useRef(null);
+
+  useEffect(() => {
+    const container = document.querySelector('.section-app-dash');
+    const movingEl = container?.querySelector('.moving-image');
+    const img = movingEl?.querySelector('img');
+    if (!container || !movingEl || !img) return;
+
+    let scrollHandler;
+
+    // IntersectionObserver watches .moving-image
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio >= 0.1) {
+          // when 10% visible, install scroll handler
+          scrollHandler = () => {
+            // how far past the “start” point (200px before top of container)
+            const { top } = container.getBoundingClientRect();
+            let scrolledPast = top - 200;
+
+            // only run if we've scrolled into that 200px window
+            if (scrolledPast > 0) return;
+            if (scrolledPast < -300) scrolledPast = -300;
+
+            // your formula: 100 − (|scrolledPast| / 2)
+            const pct = 100 - (Math.abs(scrolledPast) / 3);
+            img.style.transform = `translateY(${pct}%)`;
+          };
+
+          window.addEventListener('scroll', scrollHandler);
+          scrollHandler(); // run once immediately
+        } else if (scrollHandler) {
+          // when <10% visible, clean up
+          window.removeEventListener('scroll', scrollHandler);
+          scrollHandler = null;
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    observer.observe(movingEl);
+
+    return () => {
+      if (scrollHandler) window.removeEventListener('scroll', scrollHandler);
+      observer.disconnect();
+    };
+  }, []);
+
+
+
+
+
+
+
 
   return (
     <>
@@ -307,7 +421,7 @@ const Home = () => {
                           <p>homes and saving on travel.</p>
                         </div>
                         <a
-                          href="#!"
+                          href="https://app.kazaswap.co/"
                           class="theme-btn padding-style wow fadeInUp bg-black "
                           data-wow-delay=".7s"
                         >
@@ -350,6 +464,7 @@ const Home = () => {
                   <img src="assets/img/img-1.png" alt="Image 1" />
                   <img src="assets/img/img-2.png" alt="Image 3" />
                   <img src="assets/img/img-3.png" alt="Image 2" />
+
                 </div>
               </div>
 
@@ -365,6 +480,7 @@ const Home = () => {
                   <img src="assets/img/img-14.jpg" alt="Image 2" />
                   <img src="assets/img/img-15.jpg" alt="Image 4" />
                   <img src="assets/img/img-10.png" alt="Image 5" />
+
                   <img src="assets/img/img-11.jpg" alt="Image 1" />
                   <img src="assets/img/img-7.png" alt="Image 3" />
                   <img src="assets/img/img-8.png" alt="Image 2" />
@@ -386,6 +502,7 @@ const Home = () => {
                   <img src="assets/img/img-14.jpg" alt="Image 2" />
                   <img src="assets/img/img-15.jpg" alt="Image 4" />
                   <img src="assets/img/img-10.png" alt="Image 5" />
+
                 </div>
               </div>
 
@@ -505,10 +622,13 @@ const Home = () => {
   `}</style>
 
                           <Swiper
+                            onSwiper={(swiper) => (swiperRef.current = swiper)}
                             modules={[Pagination, Autoplay]}
                             spaceBetween={10}
                             slidesPerView={1.1} // Show 1 full + 10% of next
                             loop={true}
+                            centeredSlides={true}
+                            initialSlide={0}
                             autoplay={{
                               delay: 3000,
                               disableOnInteraction: false,
@@ -541,7 +661,7 @@ const Home = () => {
 
                                     <div className="feature-image">
                                       <img
-                                        src="assets/img/add-place.png"
+                                        src="/kaza/assets/img/add-place.png"
                                         className="w-100"
                                         alt="Feature Image"
                                       />
@@ -568,7 +688,7 @@ const Home = () => {
 
                                     <div className="feature-image">
                                       <img
-                                        src="assets/img/earn-credit.png"
+                                        src="/kaza/assets/img/earn-credit.png"
                                         className="w-100"
                                         alt="Feature Image"
                                       />
@@ -590,7 +710,7 @@ const Home = () => {
                                   </div>
                                   <div className="feature-image-img">
                                     <img
-                                      src="assets/img/use-credit.png"
+                                      src="/kaza/assets/img/use-credit.png"
                                       className=""
                                       alt="Feature Image"
                                     />
@@ -598,6 +718,8 @@ const Home = () => {
                                 </div>
                               </div>
                             </SwiperSlide>
+
+
                           </Swiper>
                         </>
                       )}
@@ -609,7 +731,7 @@ const Home = () => {
                         data-wow-delay=".9s"
                       >
                         <a
-                          href="#!"
+                          href="https://app.kazaswap.co/register"
                           class="theme-btn padding-style register-btn"
                         >
                           Register your place
@@ -627,7 +749,7 @@ const Home = () => {
           class="section stickyk"
 
           style={{
-            background: 'url(assets/img/earning-credit-bg.png)',
+            background: 'url(/kaza/assets/img/earning-credit-bg.png)',
 
             backgroundSize: 'cover',
             borderRadius: '30px',
@@ -655,11 +777,11 @@ const Home = () => {
                         <span class="credt-bold"> 1 credit!</span>
                       </p>
                       <img
-                        src="assets/img/earning-host-icon.png"
+                        src="/kaza/assets/img/earning-host-icon.png"
                         class="hide-on-mobile"
                       />
                       <div class="row hide-on-desktop">
-                        <img src="assets/img/earn-mob.png" />
+                        <img src="/kaza/assets/img/earn-mob.png" />
 
                       </div>
                     </div>
@@ -667,11 +789,11 @@ const Home = () => {
                 </div>
                 <div class="d-flex justify-content-center gap-3 align-items-center nocost mobile">
                   <a href="" class="no-member">
-                    <img src="assets/img/membership-vip 1.png" /> No membership
+                    <img src="/kaza/assets/img/membership-vip 1.png" /> No membership
                     fees
                   </a>
                   <a href="" class="no-member hiden-cost">
-                    <img src="assets/img/no-hidden-cost.png" width="29px" />
+                    <img src="/kaza/assets/img/no-hidden-cost.png" width="29px" />
                     No hidden costs
                   </a>
                 </div>
@@ -686,14 +808,14 @@ const Home = () => {
               <div
                 class="cta-video-wrapper-2 bg-cover application"
                 style={{
-                  backgroundImage: "url('assets/img/app-sec-bg.png')",
+                  backgroundImage: "url('/kaza/assets/img/app-sec-bg.png')",
                   backgroundSize: "cover",
                 }}
               >
                 <div class="app-section-grid">
                   <div class="">
                     <div class="logo-black">
-                      <img src="assets/img/logo-black.png" />
+                      <img src="/kaza/assets/img/logo-black.png" />
                     </div>
                     <h2>
                       Make it easier, <br />
@@ -710,12 +832,12 @@ const Home = () => {
                         class="d-flex align-items-center white opacity-low"
                       >
                         <img
-                          src="assets/img/apple-icon.png"
+                          src="/kaza/assets/img/apple-icon.png"
                           width="29px"
                           alt="App Store"
                         />
                         <img
-                          src="assets/img/android-icon.png"
+                          src="/kaza/assets/img/android-icon.png"
                           width="26px"
                           alt="App Store"
                         />
@@ -726,11 +848,11 @@ const Home = () => {
                   <div class="app-img-sec">
                     <div class="app-img-2 homescreen">
                       <img
-                        src="assets/img/app-img.png"
+                        src="/kaza/assets/img/app-img.png"
                         class="hide-on-mobile"
                       />
-                      <div class="row hide-on-desktop">
-                        <img src="assets/img/new-mob-img.png" class="app-mob" />
+                      <div ref={movingRef} class="row hide-on-desktop moving-image">
+                        <img src="/kaza/assets/img/new-mob-img.png" class="app-mob" />
                       </div>
                     </div>
                   </div>
@@ -919,19 +1041,25 @@ const Home = () => {
                 <div
                   class="cta-video-wrapper bg-cover1 insta-img"
                   style={{
-                    backgroundImage: "url('assets/img/insta-bg.png')",
+                    backgroundImage: "url('/kaza/assets/img/insta-bg.png')",
                     backgroundSize: "cover",
                   }}
                 >
-                  <div class="row align-items-center">
+                  <div class="row align-items-center scrollers-cont">
                     <div class="col-lg-6">
-                      <h2>
+                      <h2 className="mobnot">
                         Follow us on <br />
-                        <img src="assets/img/instagram.png" width="50px" />{" "}
+                        <img src="/kaza/assets/img/instagram.png" width="50px" />{" "}
                         Instagram,
                         <br />
                         and share your <br />
                         journey!
+                      </h2>
+
+                      <h2 className="mob">
+                      Follow us on <br />
+                        <img src="/kaza/assets/img/instagram.png" width="50px" />{" "}
+                        Instagram
                       </h2>
 
                       <div class="btn-white justify-content-start insta-follow">
@@ -965,6 +1093,7 @@ const Home = () => {
                             <img src="assets/img/insta-3.png" alt="Image 5" />
                           </div>
                         </div>
+
                       </div>
                       <div class="hide-on-mobile">
                         <div class="main-container">
@@ -1065,6 +1194,7 @@ const Home = () => {
                             </ul>
                           </div>
                         </div>
+
                       </div>
                     </div>
                   </div>
@@ -1073,12 +1203,12 @@ const Home = () => {
 
               <div className="container">
                 <div class="line-bg">
-                  <img src="assets/img/line-footer.png" />
+                  <img src="/kaza/assets/img/line-footer.png" />
                 </div>
                 <div className="site-footer">
                   <div className="footer-links">
                     <img
-                      src="assets/img/image-footer-logo.png"
+                      src="/kaza/assets/img/image-footer-logo.png"
                       alt="KazaSwap logo"
                       className="footer-logo"
                     />

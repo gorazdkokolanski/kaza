@@ -115,7 +115,7 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="#!" className="search-trigger search-icon d-xs-none">
+                <Link to="https://app.kazaswap.co/login" className="search-trigger search-icon d-xs-none">
                   <div className="icon w-embed">
                     <svg
                       className="hover-yellow"
@@ -155,7 +155,7 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="#!"
+                  to="https://app.kazaswap.co/register"
                   className="theme-btn padding-style d-xs-none wow visible fadeInUp"
                 >
                   <div className="icon w-embed">
@@ -202,7 +202,7 @@ const Header = () => {
                   <div className="logo">
                     <Link to="/" className="header-logo-2">
                       <img
-                        src="assets/img/image-footer-logo.png"
+                        src={`${process.env.PUBLIC_URL}/assets/img/image-footer-logo.png`}
                         alt="logo-img"
                       />
                     </Link>
@@ -290,7 +290,7 @@ const Header = () => {
                 </div>
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <Link
-                    to="#!"
+                    to="https://app.kazaswap.co/login"
                     className="search-trigger search-icon d-xs-none"
                   >
                     <div className="icon w-embed">
@@ -331,7 +331,7 @@ const Header = () => {
                   </Link>
 
                   <Link
-                    to="#!"
+                    to="https://app.kazaswap.co/register"
                     className="theme-btn padding-style d-xs-none wow visible fadeInUp"
                   >
                     <div className="icon w-embed">

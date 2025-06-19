@@ -64,7 +64,7 @@ const Working = () => {
           slidesPerView={1}
           loop={true}
           autoplay={{
-            delay: 3000,
+            delay: 300000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -75,6 +75,7 @@ const Working = () => {
             768: { slidesPerView: 1 },
             1024: { slidesPerView: 3 },
           }}
+          className="works-slider"
         >
           <SwiperSlide>
             <div className="col-lg-12 text-center">
@@ -83,6 +84,7 @@ const Working = () => {
                 <img
                   src="assets/img/how-credit.png"
                   style={{ width: "188px" }}
+                  className="smallmg"
                 />
               </div>
               <div className="credit-trext">
@@ -98,7 +100,7 @@ const Working = () => {
             <div className="col-lg-12 text-center">
 
               <div className="credit-img">
-                <img src="assets/img/no-subs.png" style={{ width: "188px" }} />
+                <img src="assets/img/no-subs.png" style={{ width: "188px" }} className="smallmg" />
               </div>
               <div className="credit-trext">
                 <h5>
@@ -117,7 +119,7 @@ const Working = () => {
               <div className="credit-img">
                 <img
                   src="assets/img/by-hosting.png"
-                  className="mb-0 img-big"
+                  className="mb-0 img-big bigmg"
                   style={{ width: "188px" }}
                 />
               </div>
@@ -137,7 +139,7 @@ const Working = () => {
                 <img
                   src="assets/img/true-sharing.png"
                   style={{ width: "188px" }}
-                  className="img-big"
+                  className="img-big bigmg"
                 />
               </div>
 
