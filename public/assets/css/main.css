@@ -6979,6 +6979,10 @@ a.header-logo-2 img {
   letter-spacing: -0.5px;
 }
 
+.accordion-body{
+  margin-bottom: 0!important;
+}
+
 .faq-wrapper .accordion-item .accordion-collapse .accordion-body {
   padding-left: 30px;
   padding-top: 20px;
@@ -16324,6 +16328,7 @@ a.white.yellow-blurr {
   display: flex;
   align-items: center;
   text-align: left;
+  height: 220px;
 }
 
 .app-sec-kaza-img {
