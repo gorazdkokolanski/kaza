@@ -435,73 +435,73 @@ const Home = () => {
 
               <div class="marquee">
                 <div class="marquee-inner">
-                  <img src="assets/img/img-1.png" alt="Image 1" />
-                  <img src="assets/img/img-2.png" alt="Image 3" />
-                  <img src="assets/img/img-3.png" alt="Image 2" />
-                  <img src="assets/img/img-4.png" alt="Image 4" />
-                  <img src="assets/img/img-5.png" alt="Image 5" />
-                  <img src="assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="assets/img/img-7.png" alt="Image 3" />
-                  <img src="assets/img/img-8.png" alt="Image 2" />
-                  <img src="assets/img/img-9.png" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
-                  <img src="assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="assets/img/img-1.png" alt="Image 1" />
-                  <img src="assets/img/img-2.png" alt="Image 3" />
-                  <img src="assets/img/img-3.png" alt="Image 2" />
-                  <img src="assets/img/img-4.png" alt="Image 4" />
-                  <img src="assets/img/img-5.png" alt="Image 5" />
-                  <img src="assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="assets/img/img-3.png" alt="Image 2" />
-                  <img src="assets/img/img-4.png" alt="Image 4" />
-                  <img src="assets/img/img-5.png" alt="Image 5" />
-                  <img src="assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="assets/img/img-7.png" alt="Image 3" />
-                  <img src="assets/img/img-8.png" alt="Image 2" />
-                  <img src="assets/img/img-9.png" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
-                  <img src="assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="assets/img/img-1.png" alt="Image 1" />
-                  <img src="assets/img/img-2.png" alt="Image 3" />
-                  <img src="assets/img/img-3.png" alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-1.png`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-2.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-3.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-4.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-5.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-11.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-7.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-8.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-9.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-12.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-1.png`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-2.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-3.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-4.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-5.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-11.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-3.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-4.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-5.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-11.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-7.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-8.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-9.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-12.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-1.png`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-2.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-3.png`} alt="Image 2" />
 
                 </div>
               </div>
 
               <div class="marquee-wrapper">
                 <div class="marquee-inner1">
-                  <img src="assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="assets/img/img-7.png" alt="Image 3" />
-                  <img src="assets/img/img-8.png" alt="Image 2" />
-                  <img src="assets/img/img-9.png" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
-                  <img src="assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="assets/img/img-13.jpg" alt="Image 3" />
-                  <img src="assets/img/img-14.jpg" alt="Image 2" />
-                  <img src="assets/img/img-15.jpg" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-11.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-7.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-8.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-9.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-12.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-13.jpg`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-14.jpg`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-15.jpg`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
 
-                  <img src="assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="assets/img/img-7.png" alt="Image 3" />
-                  <img src="assets/img/img-8.png" alt="Image 2" />
-                  <img src="assets/img/img-9.png" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
-                  <img src="assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="assets/img/img-13.jpg" alt="Image 3" />
-                  <img src="assets/img/img-14.jpg" alt="Image 2" />
-                  <img src="assets/img/img-15.jpg" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-11.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-7.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-8.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-9.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-12.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-13.jpg`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-14.jpg`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-15.jpg`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
 
-                  <img src="assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="assets/img/img-7.png" alt="Image 3" />
-                  <img src="assets/img/img-8.png" alt="Image 2" />
-                  <img src="assets/img/img-9.png" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
-                  <img src="assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="assets/img/img-13.jpg" alt="Image 3" />
-                  <img src="assets/img/img-14.jpg" alt="Image 2" />
-                  <img src="assets/img/img-15.jpg" alt="Image 4" />
-                  <img src="assets/img/img-10.png" alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-11.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-7.png`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-8.png`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-9.png`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-12.jpg`} alt="Image 1" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-13.jpg`} alt="Image 3" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-14.jpg`} alt="Image 2" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-15.jpg`} alt="Image 4" />
+                  <img src={`${process.env.PUBLIC_URL}/assets/img/img-10.png`} alt="Image 5" />
 
                 </div>
               </div>
@@ -550,7 +550,7 @@ const Home = () => {
 
                               <div class="feature-image">
                                 <img
-                                  src="assets/img/add-place.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/add-place.png`}
                                   class="w-100"
                                   alt="Feature Image"
                                 />
@@ -574,7 +574,7 @@ const Home = () => {
 
                               <div class="feature-image">
                                 <img
-                                  src="assets/img/earn-credit.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/earn-credit.png`}
                                   class="w-100"
                                   alt="Feature Image"
                                 />
@@ -592,7 +592,7 @@ const Home = () => {
                             </div>
                             <div class="feature-image-img">
                               <img
-                                src="assets/img/use-credit.png"
+                                src={`${process.env.PUBLIC_URL}/assets/img/use-credit.png`}
                                 class=""
                                 alt="Feature Image"
                               />
@@ -1075,22 +1075,22 @@ const Home = () => {
                       <div class="row hide-on-desktop">
                         <div class="marquee">
                           <div class="marquee-inner2">
-                            <img src="assets/img/insta-pic.png" alt="Image 1" />
-                            <img src="assets/img/insta-1.png" alt="Image 3" />
-                            <img src="assets/img/insta-2.png" alt="Image 2" />
-                            <img src="assets/img/insta-3.png" alt="Image 4" />
-                            <img src="assets/img/insta-5.png" alt="Image 5" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-pic.png`} alt="Image 1" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-1.png`} alt="Image 3" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-2.png`} alt="Image 2" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-3.png`} alt="Image 4" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-5.png`} alt="Image 5" />
                           </div>
                         </div>
 
                         <div class="marquee-wrapper">
                           <div class="marquee-inner3">
-                            <img src="assets/img/insta-1.png" alt="Image 5" />
-                            <img src="assets/img/insta-2.png" alt="Image 1" />
-                            <img src="assets/img/insta-3.png" alt="Image 3" />
-                            <img src="assets/img/insta-5.png" alt="Image 2" />
-                            <img src="assets/img/insta-pic.png" alt="Image 4" />
-                            <img src="assets/img/insta-3.png" alt="Image 5" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-1.png`} alt="Image 5" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-2.png`} alt="Image 1" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-3.png`} alt="Image 3" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-5.png`} alt="Image 2" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-pic.png`} alt="Image 4" />
+                            <img src={`${process.env.PUBLIC_URL}/assets/img/insta-3.png`} alt="Image 5" />
                           </div>
                         </div>
 
@@ -1101,43 +1101,43 @@ const Home = () => {
                             <ul class="tag-list scroller__inner">
                               <li>
                                 <img
-                                  src="assets/img/insta-1.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-1.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-2.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-2.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-3.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-3.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-4.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-4.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-5.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-5.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-1.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-1.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-pic.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-pic.png`}
                                   alt="Image 1"
                                 />
                               </li>
@@ -1151,43 +1151,43 @@ const Home = () => {
                             <ul class="tag-list scroller__inner">
                               <li>
                                 <img
-                                  src="assets/img/insta-5.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-5.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-3.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-3.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-2.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-2.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-1.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-1.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-4.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-4.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-pic.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-pic.png`}
                                   alt="Image 1"
                                 />
                               </li>
                               <li>
                                 <img
-                                  src="assets/img/insta-1.png"
+                                  src={`${process.env.PUBLIC_URL}/assets/img/insta-1.png`}
                                   alt="Image 1"
                                 />
                               </li>

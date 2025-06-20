@@ -11412,12 +11412,9 @@ a.theme-btn.padding-style.register-btn:hover {
 }
 
 a.search-trigger.search-icon.d-xs-none:hover svg path {
-  stroke: #ffe361;
-  stroke-width: 2px;
 }
 
 a.search-trigger.search-icon.d-xs-none:hover {
-  color: #ffe361;
 }
 
 .credt-bold {
@@ -16611,6 +16608,17 @@ section.section.bottom-art.stickyk {
   width: 75% !important;
 }
 
+.line-bg{
+  margin-top: 104px;
+}
+
+.line-bg img{
+  padding-bottom: 0!important;
+}
+
+#mobile-menu li a:hover{
+  text-decoration: underline;
+}
 
 @media only screen and (max-width: 1024px) {
   .marquee-inner img {
