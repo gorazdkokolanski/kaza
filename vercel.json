@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/kaza", "destination": "/kaza/index.html" },
+    { "source": "/kaza/(.*)", "destination": "/kaza/index.html" }
+  ]
+}
