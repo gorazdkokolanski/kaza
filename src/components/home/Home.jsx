@@ -233,7 +233,7 @@ const Home = () => {
           offset += direction === "left" ? -speed : speed;
           if (direction === "left"  && Math.abs(offset) >= block) offset = 0;
           if (direction === "right" && offset >= 0)             offset = -block;
-          marquee.style.transform = `translateX(${offset}px)`;
+          marquee.style.transform = `translateX(${offset/1.5}px)`;
         }
         requestAnimationFrame(step);
       }
@@ -269,7 +269,7 @@ const Home = () => {
         const dir = m.classList.contains("marquee-inner2") ? -1 : 1;
         // for right-mover we offset start so it enters from left
         const x = dir * block * prog + (dir === 1 ? -block : 0);
-        m.style.transform = `translateX(${x}px)`;
+        m.style.transform = `translateX(${x/1.5}px)`;
       });
     }
   
@@ -332,7 +332,7 @@ const Home = () => {
           y   = prog * maxOffset * dir;
         }
   
-        inner.style.transform = `translateY(${y}px)`;
+        inner.style.transform = `translateY(${y/1.5}px)`;
       });
     }
   
@@ -661,7 +661,7 @@ const Home = () => {
 
                                     <div className="feature-image">
                                       <img
-                                        src="/kaza/assets/img/add-place.png"
+                                        src="/assets/img/add-place.png"
                                         className="w-100"
                                         alt="Feature Image"
                                       />
@@ -688,7 +688,7 @@ const Home = () => {
 
                                     <div className="feature-image">
                                       <img
-                                        src="/kaza/assets/img/earn-credit.png"
+                                        src="/assets/img/earn-credit.png"
                                         className="w-100"
                                         alt="Feature Image"
                                       />
@@ -710,7 +710,7 @@ const Home = () => {
                                   </div>
                                   <div className="feature-image-img">
                                     <img
-                                      src="/kaza/assets/img/use-credit.png"
+                                      src="/assets/img/use-credit.png"
                                       className=""
                                       alt="Feature Image"
                                     />
@@ -749,7 +749,7 @@ const Home = () => {
           class="section stickyk"
 
           style={{
-            background: 'url(/kaza/assets/img/earning-credit-bg.png)',
+            background: 'url(/assets/img/earning-credit-bg.png)',
 
             backgroundSize: 'cover',
             borderRadius: '30px',
@@ -777,11 +777,11 @@ const Home = () => {
                         <span class="credt-bold"> 1 credit!</span>
                       </p>
                       <img
-                        src="/kaza/assets/img/earning-host-icon.png"
+                        src="/assets/img/earning-host-icon.png"
                         class="hide-on-mobile"
                       />
                       <div class="row hide-on-desktop">
-                        <img src="/kaza/assets/img/earn-mob.png" />
+                        <img src="/assets/img/earn-mob.png" />
 
                       </div>
                     </div>
@@ -789,11 +789,11 @@ const Home = () => {
                 </div>
                 <div class="d-flex justify-content-center gap-3 align-items-center nocost mobile">
                   <a href="" class="no-member">
-                    <img src="/kaza/assets/img/membership-vip 1.png" /> No membership
+                    <img src="/assets/img/membership-vip 1.png" /> No membership
                     fees
                   </a>
                   <a href="" class="no-member hiden-cost">
-                    <img src="/kaza/assets/img/no-hidden-cost.png" width="29px" />
+                    <img src="/assets/img/no-hidden-cost.png" width="29px" />
                     No hidden costs
                   </a>
                 </div>
@@ -808,14 +808,14 @@ const Home = () => {
               <div
                 class="cta-video-wrapper-2 bg-cover application"
                 style={{
-                  backgroundImage: "url('/kaza/assets/img/app-sec-bg.png')",
+                  backgroundImage: "url('/assets/img/app-sec-bg.png')",
                   backgroundSize: "cover",
                 }}
               >
                 <div class="app-section-grid">
                   <div class="">
                     <div class="logo-black">
-                      <img src="/kaza/assets/img/logo-black.png" />
+                      <img src="/assets/img/logo-black.png" />
                     </div>
                     <h2>
                       Make it easier, <br />
@@ -832,12 +832,12 @@ const Home = () => {
                         class="d-flex align-items-center white opacity-low"
                       >
                         <img
-                          src="/kaza/assets/img/apple-icon.png"
+                          src="/assets/img/apple-icon.png"
                           width="29px"
                           alt="App Store"
                         />
                         <img
-                          src="/kaza/assets/img/android-icon.png"
+                          src="/assets/img/android-icon.png"
                           width="26px"
                           alt="App Store"
                         />
@@ -848,11 +848,11 @@ const Home = () => {
                   <div class="app-img-sec">
                     <div class="app-img-2 homescreen">
                       <img
-                        src="/kaza/assets/img/app-img.png"
+                        src="/assets/img/app-img.png"
                         class="hide-on-mobile"
                       />
                       <div ref={movingRef} class="row hide-on-desktop moving-image">
-                        <img src="/kaza/assets/img/new-mob-img.png" class="app-mob" />
+                        <img src="/assets/img/new-mob-img.png" class="app-mob" />
                       </div>
                     </div>
                   </div>
@@ -1041,7 +1041,7 @@ const Home = () => {
                 <div
                   class="cta-video-wrapper bg-cover1 insta-img"
                   style={{
-                    backgroundImage: "url('/kaza/assets/img/insta-bg.png')",
+                    backgroundImage: "url('/assets/img/insta-bg.png')",
                     backgroundSize: "cover",
                   }}
                 >
@@ -1049,7 +1049,7 @@ const Home = () => {
                     <div class="col-lg-6">
                       <h2 className="mobnot">
                         Follow us on <br />
-                        <img src="/kaza/assets/img/instagram.png" width="50px" />{" "}
+                        <img src="/assets/img/instagram.png" width="50px" />{" "}
                         Instagram,
                         <br />
                         and share your <br />
@@ -1058,7 +1058,7 @@ const Home = () => {
 
                       <h2 className="mob">
                       Follow us on <br />
-                        <img src="/kaza/assets/img/instagram.png" width="50px" />{" "}
+                        <img src="/assets/img/instagram.png" width="50px" />{" "}
                         Instagram
                       </h2>
 
@@ -1203,12 +1203,12 @@ const Home = () => {
 
               <div className="container">
                 <div class="line-bg">
-                  <img src="/kaza/assets/img/line-footer.png" />
+                  <img src="/assets/img/line-footer.png" />
                 </div>
                 <div className="site-footer">
                   <div className="footer-links">
                     <img
-                      src="/kaza/assets/img/image-footer-logo.png"
+                      src="/assets/img/image-footer-logo.png"
                       alt="KazaSwap logo"
                       className="footer-logo"
                     />
