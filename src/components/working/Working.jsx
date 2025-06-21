@@ -64,7 +64,7 @@ const Working = () => {
           slidesPerView={1}
           loop={true}
           autoplay={{
-            delay: 300000,
+            delay: 3000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -123,7 +123,7 @@ const Working = () => {
                   style={{ width: "188px" }}
                 />
               </div>
-              <div className="credit-trext">
+              <div className="credit-trext" style={{ marginTop: -40 }}>
                 <h5>Earn Credits by Hosting</h5>
                 <p>
                   The only way to earn more credits is by hosting other members
