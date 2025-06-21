@@ -219,34 +219,34 @@ const Home = () => {
     function setupMarquee(selector, speed = 1, direction = "left") {
       const marquee = document.querySelector(selector);
       if (!marquee) return;
-  
+
       // duplicate 3× total
       const original = marquee.innerHTML;
       marquee.innerHTML = original + original + original;
-  
+
       const block = marquee.scrollWidth / 3;
       let offset = direction === "left" ? 0 : -block;
       let hover = false;
-  
+
       function step() {
         if (!hover) {
           offset += direction === "left" ? -speed : speed;
-          if (direction === "left"  && Math.abs(offset) >= block) offset = 0;
-          if (direction === "right" && offset >= 0)             offset = -block;
-          marquee.style.transform = `translateX(${offset/1.5}px)`;
+          if (direction === "left" && Math.abs(offset) >= block) offset = 0;
+          if (direction === "right" && offset >= 0) offset = -block;
+          marquee.style.transform = `translateX(${offset / 1.5}px)`;
         }
         requestAnimationFrame(step);
       }
-  
+
       marquee.addEventListener("mouseover", () => (hover = true));
-      marquee.addEventListener("mouseout",  () => (hover = false));
+      marquee.addEventListener("mouseout", () => (hover = false));
       step();
     }
-  
+
     // 2) Kick off the two looping marquees
-    setupMarquee(".marquee-inner",  1, "left");
+    setupMarquee(".marquee-inner", 1, "left");
     setupMarquee(".marquee-inner1", 1, "right");
-  
+
     // 3) Duplicate content for the scroll-synced lanes
     [".marquee-inner2", ".marquee-inner3"].forEach((sel) => {
       const m = document.querySelector(sel);
@@ -254,7 +254,7 @@ const Home = () => {
       const html = m.innerHTML;
       m.innerHTML = html + html + html;
     });
-  
+
     // 4) Hook up scroll → horizontal offset for lanes 2 & 3
     const synced = document.querySelectorAll(".marquee-inner2, .marquee-inner3");
     function onScroll() {
@@ -264,25 +264,25 @@ const Home = () => {
         const block = m.scrollWidth / 3;
         let prog = (H - top) / (H + height);
         prog = Math.max(0, Math.min(1, prog));
-  
+
         // inner2 → left (-1), inner3 → right (+1)
         const dir = m.classList.contains("marquee-inner2") ? -1 : 1;
         // for right-mover we offset start so it enters from left
         const x = dir * block * prog + (dir === 1 ? -block : 0);
-        m.style.transform = `translateX(${x/1.5}px)`;
+        m.style.transform = `translateX(${x / 1.5}px)`;
       });
     }
-  
+
     window.addEventListener("scroll", onScroll);
     onScroll(); // initialize
-  
+
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
-  
-  
-  
+
+
+
 
 
   useEffect(() => {
@@ -291,59 +291,59 @@ const Home = () => {
 
   useEffect(() => {
     const scrollers = document.querySelectorAll(".scroller");
-  
+
     // 1) Disable CSS animation & duplicate content
     scrollers.forEach((scroller) => {
       const inner = scroller.querySelector(".scroller__inner");
       if (!inner) return;
-  
+
       scroller.removeAttribute("data-animated");
       inner.style.animation = "none";
-  
+
       Array.from(inner.children).forEach((item) => {
         const dup = item.cloneNode(true);
         dup.setAttribute("aria-hidden", "true");
         inner.appendChild(dup);
       });
     });
-  
+
     // 2) Scroll-sync handler with flipped direction for data-direction="up"
     function onScroll() {
       const vh = window.innerHeight;
       scrollers.forEach((scroller) => {
         const inner = scroller.querySelector(".scroller__inner");
         if (!inner) return;
-  
+
         const { top, height } = scroller.getBoundingClientRect();
         const maxOffset = inner.scrollHeight - height;
-  
+
         let prog = (vh - top) / (vh + height);
         prog = Math.max(0, Math.min(1, prog));
-  
+
         // Default: move up (negative Y). If data-direction="up": move down (positive Y).
-        const dir = scroller.dataset.direction === "up" ?  1 : -1;
+        const dir = scroller.dataset.direction === "up" ? 1 : -1;
         let y;
-        if(dir==1){
-          y  = inner.offsetHeight - (prog * maxOffset * dir);
-          y*=-1
+        if (dir == 1) {
+          y = inner.offsetHeight - (prog * maxOffset * dir);
+          y *= -1
           console.log(y)
         }
-        else{
-          y   = prog * maxOffset * dir;
+        else {
+          y = prog * maxOffset * dir;
         }
-  
-        inner.style.transform = `translateY(${y/1.5}px)`;
+
+        inner.style.transform = `translateY(${y / 1.5}px)`;
       });
     }
-  
+
     window.addEventListener("scroll", onScroll);
     onScroll(); // initialize on mount
-  
+
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
   }, []);
-  
+
 
   const movingRef = useRef(null);
 
@@ -465,6 +465,12 @@ const Home = () => {
                   <img src="/assets/img/img-2.png" alt="Image 3" />
                   <img src="/assets/img/img-3.png" alt="Image 2" />
 
+                  <img src="/assets/img/img-30.jpg" alt="Image 30" />
+                  <img src="/assets/img/img-31.jpg" alt="Image 31" />
+                  <img src="/assets/img/img-32.jpg" alt="Image 32" />
+                  <img src="/assets/img/img-33.jpg" alt="Image 33" />
+                  <img src="/assets/img/img-34.jpg" alt="Image 34" />
+                  <img src="/assets/img/img-35.jpg" alt="Image 35" />
                 </div>
               </div>
 
@@ -503,8 +509,15 @@ const Home = () => {
                   <img src="/assets/img/img-15.jpg" alt="Image 4" />
                   <img src="/assets/img/img-10.png" alt="Image 5" />
 
+                  <img src="/assets/img/img-30.jpg" alt="Image 30" />
+                  <img src="/assets/img/img-31.jpg" alt="Image 31" />
+                  <img src="/assets/img/img-32.jpg" alt="Image 32" />
+                  <img src="/assets/img/img-33.jpg" alt="Image 33" />
+                  <img src="/assets/img/img-34.jpg" alt="Image 34" />
+                  <img src="/assets/img/img-35.jpg" alt="Image 35" />
                 </div>
               </div>
+
 
               <div class="row hide-on-desktop">
                 <a
@@ -1057,7 +1070,7 @@ const Home = () => {
                       </h2>
 
                       <h2 className="mob">
-                      Follow us on <br />
+                        Follow us on <br />
                         <img src="/assets/img/instagram.png" width="50px" />{" "}
                         Instagram
                       </h2>
