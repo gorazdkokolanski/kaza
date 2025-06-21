@@ -3029,8 +3029,10 @@ a.header-logo-2 img {
   }
 }
 
-.about-content h2{
-  font-size: 54px;
+@media only screen and (min-width: 1024px){
+  .about-content h2{
+    font-size: 54px;
+  }
 }
 
 .hero-4 .hero-content p {
@@ -11257,7 +11259,7 @@ section.service-section-2.fix.section-padding {
   /* display: flex; */
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0px 30px;
+  padding: 25px 0px 30px;
   font-size: 12px;
   line-height: 12px;
   font-weight: 500;
@@ -16067,7 +16069,7 @@ p.mt-3.about-p.margin-75.mt-md-0.wow.fadeInUp.faq-des {
   }
 
   .marquee-inner3 img {
-    width: 50vw;
+    width: 65vw;
   }
 
   .marquee-inner2 img {
@@ -16339,7 +16341,15 @@ a.white.yellow-blurr {
   display: flex;
   align-items: center;
   text-align: left;
-  height: 220px;
+}
+
+@media only screen and (min-width: 1024px){
+  .app-sec-kaza-2.app-sec-kaza {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    height: 220px;
+  }
 }
 
 .app-sec-kaza-img {
