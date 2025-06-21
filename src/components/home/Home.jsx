@@ -363,7 +363,7 @@ const Home = () => {
           scrollHandler = () => {
             // how far past the “start” point (200px before top of container)
             const { top } = container.getBoundingClientRect();
-            let scrolledPast = top - 300;
+            let scrolledPast = top - 400;
 
             // only run if we've scrolled into that 200px window
             if (scrolledPast > 0) return;
