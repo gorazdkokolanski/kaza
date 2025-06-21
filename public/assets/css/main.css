@@ -16787,7 +16787,6 @@ section.section.bottom-art.stickyk {
   }
 
   .app-section .btn-white{
-    margin-bottom: 20px!important;
   }
 
   .marquee-inner2{
@@ -16800,6 +16799,10 @@ section.section.bottom-art.stickyk {
 
   .btn-white.justify-content-start.insta-follow{
     margin-top: 15px!important;
+  }
+
+  .btn-white.mob-new{
+    margin-bottom: 20px!important;
   }
 
 }
