@@ -434,85 +434,35 @@ const Home = () => {
               </div>
 
               <div class="marquee">
-                <div class="marquee-inner">
-                  <img src="/assets/img/img-1.png" alt="Image 1" />
-                  <img src="/assets/img/img-2.png" alt="Image 3" />
-                  <img src="/assets/img/img-3.png" alt="Image 2" />
-                  <img src="/assets/img/img-4.png" alt="Image 4" />
-                  <img src="/assets/img/img-5.png" alt="Image 5" />
-                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-7.png" alt="Image 3" />
-                  <img src="/assets/img/img-8.png" alt="Image 2" />
-                  <img src="/assets/img/img-9.png" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-1.png" alt="Image 1" />
-                  <img src="/assets/img/img-2.png" alt="Image 3" />
-                  <img src="/assets/img/img-3.png" alt="Image 2" />
-                  <img src="/assets/img/img-4.png" alt="Image 4" />
-                  <img src="/assets/img/img-5.png" alt="Image 5" />
-                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-3.png" alt="Image 2" />
-                  <img src="/assets/img/img-4.png" alt="Image 4" />
-                  <img src="/assets/img/img-5.png" alt="Image 5" />
-                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-7.png" alt="Image 3" />
-                  <img src="/assets/img/img-8.png" alt="Image 2" />
-                  <img src="/assets/img/img-9.png" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-1.png" alt="Image 1" />
-                  <img src="/assets/img/img-2.png" alt="Image 3" />
-                  <img src="/assets/img/img-3.png" alt="Image 2" />
-                  <img src="/assets/img/img-30.jpg" alt="Image 30" />
-                  <img src="/assets/img/img-31.jpg" alt="Image 31" />
-                  <img src="/assets/img/img-32.jpg" alt="Image 32" />
-                  <img src="/assets/img/img-33.jpg" alt="Image 33" />
-                  <img src="/assets/img/img-34.jpg" alt="Image 34" />
-                  <img src="/assets/img/img-35.jpg" alt="Image 35" />
-                </div>
-              </div>
+  <div class="marquee-inner">
+    <img src="/assets/img/img-1.png"  alt="Image 1"  />
+    <img src="/assets/img/img-2.png"  alt="Image 3"  />
+    <img src="/assets/img/img-3.png"  alt="Image 2"  />
+    <img src="/assets/img/img-4.png"  alt="Image 4"  />
+    <img src="/assets/img/img-5.png"  alt="Image 5"  />
+    <img src="/assets/img/img-7.png"  alt="Image 3"  />
+    <img src="/assets/img/img-8.png"  alt="Image 2"  />
+    <img src="/assets/img/img-9.png"  alt="Image 4"  />
+    <img src="/assets/img/img-10.png" alt="Image 5"  />
+    <img src="/assets/img/img-11.jpg" alt="Image 1"  />
+    <img src="/assets/img/img-12.jpg" alt="Image 1"  />
+  </div>
+</div>
 
-              <div class="marquee-wrapper">
-                <div class="marquee-inner1">
-                  <img src="/assets/img/img-30.jpg" alt="Image 30" />
-                  <img src="/assets/img/img-31.jpg" alt="Image 31" />
-                  <img src="/assets/img/img-32.jpg" alt="Image 32" />
-                  <img src="/assets/img/img-33.jpg" alt="Image 33" />
-                  <img src="/assets/img/img-34.jpg" alt="Image 34" />
-                  <img src="/assets/img/img-35.jpg" alt="Image 35" />
-                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-7.png" alt="Image 3" />
-                  <img src="/assets/img/img-8.png" alt="Image 2" />
-                  <img src="/assets/img/img-9.png" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-13.jpg" alt="Image 3" />
-                  <img src="/assets/img/img-14.jpg" alt="Image 2" />
-                  <img src="/assets/img/img-15.jpg" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-7.png" alt="Image 3" />
-                  <img src="/assets/img/img-8.png" alt="Image 2" />
-                  <img src="/assets/img/img-9.png" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-13.jpg" alt="Image 3" />
-                  <img src="/assets/img/img-14.jpg" alt="Image 2" />
-                  <img src="/assets/img/img-15.jpg" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-7.png" alt="Image 3" />
-                  <img src="/assets/img/img-8.png" alt="Image 2" />
-                  <img src="/assets/img/img-9.png" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                  <img src="/assets/img/img-12.jpg" alt="Image 1" />
-                  <img src="/assets/img/img-13.jpg" alt="Image 3" />
-                  <img src="/assets/img/img-14.jpg" alt="Image 2" />
-                  <img src="/assets/img/img-15.jpg" alt="Image 4" />
-                  <img src="/assets/img/img-10.png" alt="Image 5" />
-                </div>
-              </div>
+<div class="marquee-wrapper">
+  <div class="marquee-inner1">
+    <img src="/assets/img/img-13.jpg" alt="Image 3"   />
+    <img src="/assets/img/img-14.jpg" alt="Image 2"   />
+    <img src="/assets/img/img-15.jpg" alt="Image 4"   />
+    <img src="/assets/img/img-30.jpg" alt="Image 30"  />
+    <img src="/assets/img/img-31.jpg" alt="Image 31"  />
+    <img src="/assets/img/img-32.jpg" alt="Image 32"  />
+    <img src="/assets/img/img-33.jpg" alt="Image 33"  />
+    <img src="/assets/img/img-34.jpg" alt="Image 34"  />
+    <img src="/assets/img/img-35.jpg" alt="Image 35"  />
+  </div>
+</div>
+
 
 
 

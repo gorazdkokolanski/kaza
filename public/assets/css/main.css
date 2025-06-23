@@ -11056,6 +11056,10 @@ p.sticky-label {
   width: 85%!important;
 }
 
+.feature-card img{
+  width: 85%!important;
+}
+
 .splt-txt.wow.heading-exchange{
 
 }
@@ -11209,7 +11213,7 @@ p.sticky-label {
   line-height: 24px;
   color: #000;
   opacity: 60%;
-  margin-bottom: 0;
+  margin-bottom: 50px!important;
   margin-top: 21px;
 }
 
