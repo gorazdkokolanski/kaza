@@ -41,11 +41,13 @@ const Header = () => {
                   alignItems: "center",
                 }}
               >
+                <Link className="mob-link-home" to="/">
                 <img
                   src="assets/img/image-footer-logo.png"
                   alt="logo"
                   width={120}
                 />
+                </Link>
                 <CloseOutlined
                   onClick={toggleSidebar}
                   style={{ fontSize: 18, cursor: "pointer" }}
