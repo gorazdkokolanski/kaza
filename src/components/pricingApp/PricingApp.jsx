@@ -114,75 +114,60 @@ const PricingApp = () => {
             </section>
             <section className="service-section-2 fix mw-100 section-padding pricing-sec"
                 style={{
-                    background:'url(assets/img/pricing-bg.png)',
+                    background: 'url(assets/img/pricing-bg.png)',
                     backgroundSize: "cover",
                     borderRadius: "30px",
-                       
-                  
+
+
                 }}>
                 <div className="container">
                     <div className="row align-items-center">
 
                         <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp define-width-price" data-wow-delay=".3s">
-                            <div className="service-box-items mt-0 style-2 opacity-100">
+                            <div className="mob trip-mobile">
+                                <img src="/assets/img/trip-mobile.png" alt="img" />
+                            </div>
+                            <div className="trip-box">
+                                <h2>One-week trip in Berlin</h2>
 
-                                <div className="content">
-                                    <h4 className="splt-txt wow" data-splitting style={{ textAlign: "left" }}>
-                                        <a href="#!"> One-week trip in London</a>
-                                    </h4>
-                                    <div className="row">
-                                        <div className="col-lg-6 col-md-6">
-                                            <div className="heading-prici">
-                                                <h4>Airbnb </h4>
+                                <p>
+                                    Join our community for affordable home exchanges and experience savings unlike any Airbnb stay.
+                                </p>
+
+                                <h4>Saving up to 1500€ cost on Airbnb.</h4>
+
+                                <div className='trip-icons'>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <img src="/assets/img/t1.png" alt="trip" />
                                             </div>
-                                            <p className="breakdown-cost">Breakdown costs</p>
-                                            <div className="border-right">
-                                                <div className="d-flex justify-content-between align-items-center table-structu">
-                                                    <h4>Price per night </h4>
-                                                    <h5>180€</h5>
-                                                </div>
-                                                <div className="d-flex justify-content-between align-items-center table-structu">
-                                                    <h4>Cleaning fee </h4>
-                                                    <h5>46€</h5>
-                                                </div>
-                                                <div className="d-flex justify-content-between align-items-center table-structu">
-                                                    <h4>Service fee </h4>
-                                                    <h5>94€</h5>
-                                                </div>
-                                            </div>
-                                            <div className="total-btn">
-                                                <p>Total</p>
-                                                <h2>1500€</h2>
-                                            </div>
+                                            <div>2 weeks in Berlin.</div>
                                         </div>
-                                        <div className="col-lg-6 col-md-6">
-                                            <div className="heading-prici">
-                                                <h4>KazaSwap </h4>
+                                        <div>
+                                            <div>
+                                                <img src="/assets/img/t2.png" alt="trip" />
                                             </div>
-                                            <p className="breakdown-cost">Breakdown costs</p>
-                                            <div className="border-right border-0 p-0">
-                                                <div className="d-flex justify-content-between align-items-center table-structu">
-                                                    <h4>Price per night </h4>
-                                                    <h5>0€</h5>
-                                                </div>
-                                                <div className="d-flex justify-content-between align-items-center table-structu">
-                                                    <h4>Cleaning fee </h4>
-                                                    <h5>0€</h5>
-                                                </div>
-                                                <div className="d-flex justify-content-between align-items-center table-structu">
-                                                    <h4>Service fee </h4>
-                                                    <h5>150€</h5>
-                                                </div>
-                                            </div>
-                                            <div className="total-btn">
-                                                <p>Total</p>
-                                                <h2><small>7 Credits </small><span> &</span> 150€</h2>
-                                            </div>
+                                            <div>Work setup, desk, speed WIFI.</div>
                                         </div>
                                     </div>
-
-
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <img src="/assets/img/t3.png" alt="trip" />
+                                            </div>
+                                            <div>2 bedrooms, bright flat.</div>
+                                        </div>
+                                        <div>
+                                            <div>
+                                                <img src="/assets/img/t4.png" alt="trip" />
+                                            </div>
+                                            <div>2 bathrooms.</div>
+                                        </div>
+                                    </div>
                                 </div>
+
+                                <a className="new-btn" href="https://app.kazaswap.co/register">Register your place</a>
                             </div>
                         </div>
 

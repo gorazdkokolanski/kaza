@@ -72,7 +72,8 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="/properties"
+                  to="https://app.kazaswap.co/"
+                  target="_blank"
                   onClick={toggleSidebar}
                   style={{
                     color: location.pathname === "/properties" ? "yellow" : "",
@@ -232,7 +233,8 @@ const Header = () => {
                             </li>
                             <li>
                               <Link
-                                to="/properties"
+                                to="https://app.kazaswap.co/"
+                                target="_blank"
                                 style={{
                                   color:
                                     location.pathname === "/properties"

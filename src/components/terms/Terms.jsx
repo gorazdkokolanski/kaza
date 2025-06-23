@@ -225,8 +225,7 @@ const Terms = () => {
                       <span>13. Contact Information </span>
                     </p>
                     <p>
-                      If you have questions or concerns, contact us at: [Insert
-                      Contact Email or Link]
+                      If you have questions or concerns, contact us at: <a href="mailto:community@kazaswap.com">community@kazaswap.com</a>
                     </p>
                     <p>Thank you for being part of the KazaSwap community!</p>
                   </div>
