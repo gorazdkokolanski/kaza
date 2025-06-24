@@ -133,7 +133,7 @@ const Confidentials = () => {
                     <p className="mb-0">
                       {" "}
                       For any concerns regarding confidentiality, please contact
-                      us at: [Insert Contact Email]{" "}
+                      us at: <a href="mailto:community@kazaswap.com">community@kazaswap.com</a>
                     </p>
                     <p>
                       {" "}

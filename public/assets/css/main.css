@@ -17198,7 +17198,7 @@ section.section.bottom-art.stickyk {
     width: 100%;
   }
 
-  .trip-mobile img{
+  .trip-mobile>img:nth-child(1){
     width: 100%;
     aspect-ratio: 375 / 320;
     object-fit: cover;
@@ -17267,6 +17267,11 @@ section.section.bottom-art.stickyk {
 
   .about-section.fix.section-padding.pricing-padding .about-wrapper-3.style-2 .about-content p.mt-3.about-p.mt-md-0.wow.fadeInUp{
     margin-bottom: 0!important;
+    max-width: 250px;
+  }
+
+  .swiper-slide .feature-card.homepage{
+    padding-bottom: 20px!important;
   }
 
   .swiper-slide .feature-card.homepage{
@@ -17279,6 +17284,23 @@ section.section.bottom-art.stickyk {
 
   .col-xl-4.col-lg-4.col-md-6.wow.fadeInUp.define-width-price:has(.trip-box){
     background-color: white;
+  }
+
+  .section-app-dash{
+    overflow: hidden;
+  }
+
+  .trip-review{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    height: 60px;
+    width: 221px;
+    transform: translateY(120%);
+  }
+
+  .trip-mobile{
+    position: relative;
   }
 
 }

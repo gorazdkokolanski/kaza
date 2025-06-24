@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react';
 import pricingBg from "../../assets/img/pricing-bg-img.png";
 
 const PricingApp = () => {
 
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+    const tripBoxRef = useRef(null);
+    const tripReviewRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
@@ -18,6 +21,47 @@ const PricingApp = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const container = tripBoxRef.current;
+        const img = tripReviewRef.current;
+        if (!container || !img) return;
+
+        let scrollHandler;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.intersectionRatio >= 0.1) {
+                    // when 10% visible, start listening to scroll
+                    scrollHandler = () => {
+                        const { top } = container.getBoundingClientRect();
+                        // replicate your “start 200px before” window:
+                        let scrolledPast = top - 800;
+
+                        if (scrolledPast > 0) return;            // not yet in range
+                        if (scrolledPast < -300) scrolledPast = -300;  // don’t overshoot
+
+                        // same formula you used: 100 − (|scrolledPast|/3)
+                        const pct = 100 - Math.abs(scrolledPast) / 3;
+                        img.style.transform = `translateY(${pct*1.3}%)`;
+                    };
+
+                    window.addEventListener('scroll', scrollHandler);
+                    scrollHandler(); // initialize position immediately
+                } else if (scrollHandler) {
+                    window.removeEventListener('scroll', scrollHandler);
+                    scrollHandler = null;
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        observer.observe(container);
+
+        return () => {
+            if (scrollHandler) window.removeEventListener('scroll', scrollHandler);
+            observer.disconnect();
+        };
+    }, [screenWidth]);
 
 
 
@@ -123,9 +167,10 @@ const PricingApp = () => {
                 <div className="container">
                     <div className="row align-items-center">
 
-                        <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp define-width-price" data-wow-delay=".3s">
+                        <div className="col-xl-4 col-lg-4 col-md-6 wow fadeInUp define-width-price" data-wow-delay=".3s" ref={tripBoxRef}>
                             <div className="mob trip-mobile">
                                 <img src="/assets/img/trip-mobile.png" alt="img" />
+                                <img className='trip-review' src="/assets/img/trip-review.png" alt="review" ref={tripReviewRef} /> 
                             </div>
                             <div className="trip-box">
                                 <h2>One-week trip in Berlin</h2>

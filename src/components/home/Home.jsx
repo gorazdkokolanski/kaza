@@ -633,13 +633,9 @@ const Home = () => {
                                   <div className="feature-content">
                                     <div className="feature-details">
                                       <div className="feature-number">02</div>
-                                      <h3 className="feature-title">
+                                      <h3 className="feature-title" style={{marginBottom: 30}}>
                                         Earn Credits by hosting
                                       </h3>
-                                      <p className="feature-description">
-                                        Earn credits every time someone
-                                        <br /> stays at your place
-                                      </p>
                                     </div>
 
                                     <div className="feature-image">
@@ -669,6 +665,7 @@ const Home = () => {
                                       src="/assets/img/use-credit.png"
                                       className=""
                                       alt="Feature Image"
+                                      style={{ width: '90%', marginBottom: -30 }}
                                     />
                                   </div>
                                 </div>
@@ -974,7 +971,7 @@ const Home = () => {
                               aria-expanded="false"
                               aria-controls="faq5"
                             >
-                              How do I book a stay at someone else’s home?
+                              How do I book a stay?
                             </button>
                           </h5>
                           <div
