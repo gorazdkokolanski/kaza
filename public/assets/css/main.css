@@ -17332,6 +17332,10 @@ section.section.bottom-art.stickyk {
     display: none;
   }
 
+  .feature-card.bg-none .feature-title{
+    font-size: 24px;
+  }
+
 }
 
 .about-content.text-center.works-flow>*>*:nth-child(2)>img{
