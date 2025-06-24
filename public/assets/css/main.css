@@ -15848,8 +15848,8 @@ p.mt-3.about-p.margin-75.mt-md-0.wow.fadeInUp.faq-des {
   }
 
   .slick__slide .credit-trext h5 {
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 22px;
+    line-height: 26px;
     font-weight: 700;
     opacity: 60%;
     margin-bottom: 24px;
@@ -16258,6 +16258,8 @@ img.vh-card-img{width: 388px!important;} */
     width: 280px;
     height: 62px;
   }
+
+
 }
 
 @media screen and (width: 991px) and (height: 1280px) {}
@@ -17303,6 +17305,37 @@ section.section.bottom-art.stickyk {
     position: relative;
   }
 
+  .credit-trext h5{
+    font-size: 20px!important;
+    line-height: 26px;
+  }
+
+  .credit-trext p{
+    font-size: 16px!important;
+    line-height: 26px!important;
+  }
+
+  .about-section.fix.section-padding.pricing-padding .about-wrapper-3.style-2 .about-content p.mt-3.about-p.mt-md-0.wow.fadeInUp{
+    padding-bottom: 0;
+  }
+
+  .about-wrapper-3>.row.justify-content-end.align-items-center.position-relative>*:nth-child(1){
+    margin-bottom: -30px;
+    margin-top: 15px!important;
+  }
+
+  a.search-trigger.search-icon.d-xs-none:hover{
+    background-color: transparent!important;
+  }
+
+  a.search-trigger.search-icon.d-xs-none:hover::after{
+    display: none;
+  }
+
+}
+
+.about-content.text-center.works-flow>*>*:nth-child(2)>img{
+  width: 220px!important;
 }
 
 .shadow-img{

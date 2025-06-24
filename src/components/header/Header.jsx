@@ -41,7 +41,7 @@ const Header = () => {
                   alignItems: "center",
                 }}
               >
-                <Link className="mob-link-home" to="/">
+                <Link className="mob-link-home" to="/" onClick={toggleSidebar}>
                 <img
                   src="assets/img/image-footer-logo.png"
                   alt="logo"

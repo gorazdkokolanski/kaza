@@ -468,7 +468,7 @@ const Home = () => {
 
               <div class="row hide-on-desktop">
                 <a
-                  href="#!"
+                  href="https://app.kazaswap.co/"
                   class="theme-btn padding-style wow fadeInUp bg-black bottom-new"
                   data-wow-delay=".7s"
                 >

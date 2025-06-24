@@ -789,7 +789,7 @@ const Faqs = () => {
                     data-bs-parent="#accordionMobile7"
                   >
                     <div className="accordion-body d-flex align-items-center gap-61">
-                      <img src="assets/img/first-adge.png" width="98" alt="" />
+                      <img src="assets/img/first-adge.png" width="50" alt="" />
                       <div>
                         <h4>First Badge: "Globetrotter in Training"</h4>
                         <b>How to unlock:</b> Create a completed profile and host your first guest.<br />
@@ -797,7 +797,7 @@ const Faqs = () => {
                       </div>
                     </div>
                     <div className="accordion-body d-flex align-items-center gap-61">
-                      <img src="assets/img/sec-badge.png" width="98" alt="" />
+                      <img src="assets/img/sec-badge.png" width="50" alt="" />
                       <div>
                         <h4>Second Badge: "Explorer Host"</h4>
                         <b>How to unlock:</b> Host 5 guests and receive 3 positive reviews.<br />
@@ -805,7 +805,7 @@ const Faqs = () => {
                       </div>
                     </div>
                     <div className="accordion-body d-flex align-items-center gap-61">
-                      <img src="assets/img/third-badge.png" width="98" alt="" />
+                      <img src="assets/img/third-badge.png" width="50" alt="" />
                       <div>
                         <h4>Third Badge: "Master Host Nomad"</h4>
                         <b>How to unlock:</b> Host 10+ guests with consistent positive feedback.<br />

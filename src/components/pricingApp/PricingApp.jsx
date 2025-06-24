@@ -35,7 +35,7 @@ const PricingApp = () => {
                     scrollHandler = () => {
                         const { top } = container.getBoundingClientRect();
                         // replicate your “start 200px before” window:
-                        let scrolledPast = top - 800;
+                        let scrolledPast = top - 600;
 
                         if (scrolledPast > 0) return;            // not yet in range
                         if (scrolledPast < -300) scrolledPast = -300;  // don’t overshoot
@@ -67,7 +67,6 @@ const PricingApp = () => {
 
     return (
         <>
-
 
             <section className="about-section fix section-padding mw-100 pricing-padding mb-0">
                 <div className="container-fluid">
