@@ -48,10 +48,13 @@ const Header = () => {
                   width={120}
                 />
                 </Link>
-                <CloseOutlined
-                  onClick={toggleSidebar}
-                  style={{ fontSize: 18, cursor: "pointer" }}
-                />
+                <div className="sidebar__toggle" onClick={toggleSidebar}>
+                      <img
+                        src="assets/img/menu.png"
+                        alt="hamburger"
+                        width="29px"
+                      />
+                    </div>
               </div>
             }
             placement="right"

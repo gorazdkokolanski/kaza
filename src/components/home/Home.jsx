@@ -393,6 +393,12 @@ const Home = () => {
     };
   }, []);
 
+  useEffect(() => {
+    // fire once, on mount
+    document.body.classList.add('page-ready');
+  }, []);
+  
+
 
 
 
@@ -422,7 +428,7 @@ const Home = () => {
                         </div>
                         <a
                           href="https://app.kazaswap.co/"
-                          class="theme-btn padding-style wow fadeInUp bg-black "
+                          class="theme-btn padding-style wow fadeInUp bg-black fadeInUp"
                           data-wow-delay=".7s"
                         >
                           Discover our places
@@ -663,7 +669,7 @@ const Home = () => {
                                   <div className="feature-image-img">
                                     <img
                                       src="/assets/img/use-credit.png"
-                                      className=""
+                                      className="theone"
                                       alt="Feature Image"
                                       style={{ width: '90%', marginBottom: -30 }}
                                     />

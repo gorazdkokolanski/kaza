@@ -222,7 +222,7 @@ const Working = () => {
                             width="250px"
                           />
                         </div>
-                        <div class="credit-trext">
+                        <div class="credit-trext" style={{marginTop: -30}}>
                           <h5>Earn Credits by Hosting</h5>
                           <p>
                             The only way to earn more credits is by <br />

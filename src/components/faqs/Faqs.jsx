@@ -506,7 +506,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile1"
                     >
-                      <img src="assets/img/info-1.png" width="43" className="me-2" alt="" />
+                      <img src="assets/img/info-1.png" width="30" className="me-2" alt="" />
                       General Information
                     </button>
                   </h2>
@@ -546,7 +546,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile2"
                     >
-                      <img src="assets/img/membership-vip-1.png" width="52" className="me-2" alt="" />
+                      <img src="assets/img/membership-vip-1.png" width="30" className="me-2" alt="" />
                       Using the Platform
                     </button>
                   </h2>
@@ -598,7 +598,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile3"
                     >
-                      <img src="assets/img/hosting.png" width="51" className="me-2" alt="" />
+                      <img src="assets/img/hosting.png" width="30" className="me-2" alt="" />
                       Hosting and Staying
                     </button>
                   </h2>
@@ -646,7 +646,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile4"
                     >
-                      <img src="assets/img/booking.png" width="44" className="me-2" alt="" />
+                      <img src="assets/img/booking.png" width="30" className="me-2" alt="" />
                       Bookings and Swaps
                     </button>
                   </h2>
@@ -690,7 +690,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile5"
                     >
-                      <img src="assets/img/accounts.png" width="67" className="me-2" alt="" />
+                      <img src="assets/img/accounts.png" width="36" className="me-2" alt="" />
                       Account and Community Guidelines
                     </button>
                   </h2>
@@ -738,7 +738,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile6"
                     >
-                      <img src="assets/img/security.png" width="44" className="me-2" alt="" />
+                      <img src="assets/img/security.png" width="30" className="me-2" alt="" />
                       Security and Trust
                     </button>
                   </h2>
@@ -778,7 +778,7 @@ const Faqs = () => {
                       aria-expanded="false"
                       aria-controls="faqMobile7"
                     >
-                      <img src="assets/img/reward.png" width="44" className="me-2" alt="" />
+                      <img src="assets/img/reward.png" width="30" className="me-2" alt="" />
                       Reward Program
                     </button>
                   </h2>
