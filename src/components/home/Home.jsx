@@ -426,22 +426,24 @@ const Home = () => {
   useEffect(() => {
     const imgs = document.querySelectorAll(".come-img");
     if (!imgs.length) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.8 } // tweak when it should fire
-    );
-
+  
+    // Trigger when ~30% of the image is visible
+    const options = { threshold: 0.5 };
+  
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    }, options);
+  
     imgs.forEach((img) => observer.observe(img));
+  
     return () => observer.disconnect();
   }, []);
+  
 
   useEffect(() => {
     const parts = document.querySelectorAll(".progress-part .part-text");
@@ -579,6 +581,79 @@ useEffect(() => {
         </section>
         <section class="section stickyk">
           <section class="about-section  section-padding vertical-scrolling">
+            
+            <div class="container progress-section-container">
+              <h2>What You Get<br></br>with Every Swap</h2>
+
+              <div className="progress-parts">
+
+                <div className="progress-part">
+                  <div className="part-img">
+                    <img src="/assets/img/progress-1.png" alt="progress" />
+                    <img
+                      src="/assets/img/progress-come-1.png"
+                      alt="progress coming in"
+                      className="come-img"
+                    />
+                  </div>
+                  <div className="part-text">
+                    <h5 className="mobnot">Verified members.</h5>
+                    <div className="mobnot">
+                      <span>Powered by Veriff</span>
+                      <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
+                    </div>
+                    <div className="mob" style={{ display: 'flex', flexDirection: 'column', gap: 1, minWidth: '42%', alignItems: 'flex-start' }}>
+                      <h5>Verified members.</h5>
+                      <div style={{ display: 'flex', gap: 5, alignItems: 'center' }}>
+                        <span>Powered by Veriff</span>
+                        <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
+                      </div>
+                    </div>
+                    <p>
+                    Open your door to someone real. We perform ID Check with our partner <strong>Veriff</strong>  (the same system trusted by Amazon, Visa & Bolt).
+                    </p>
+                    <img className="mobnot" src="/assets/img/payments.png" alt="pay" />
+                  </div>
+                </div>
+
+                <div className="progress-part">
+                  <div className="part-text">
+                    <h5>Contract for every swap.</h5>
+                    <p>
+                    To give you peace of mind, every confirmed swap comes with a clear contract and a compatibility score to ensure both parties have aligned expectations.
+                    </p>
+                  </div>
+                  <div className="part-img">
+                  <img src="/assets/img/progress-2.png" alt="progress" />
+                  <img src="/assets/img/progress-come-2.png"
+                      alt="progress coming in"
+                      className="come-img" />
+                  </div>
+                </div>
+
+                <div className="progress-part">
+                  <div className="part-img">
+                    <img src="/assets/img/progress-3.png" alt="progress" />
+                    <img
+                      src="/assets/img/progress-come-3.png"
+                      alt="progress coming in"
+                      className="come-img"
+                    />
+                  </div>
+                  <div className="part-text">
+                    <h5>Mandatory reviews, live ranking.</h5>
+                    <p>
+                    After each swap, both guests must leave a review. Our system updates the rankings every day. Good reviews help you move up. Bad ones push you down.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="progress-line" ref={progressRail}>
+                  <div className="progress-line-inner" ref={progressInner} />
+                </div>
+
+              </div>
+            </div>
             <div class="container">
               <div class="about-wrapper-3 style-2">
                 <div class="row">
@@ -791,75 +866,6 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="container progress-section-container">
-              <h2>Why choosing us?</h2>
-
-              <div className="progress-parts">
-
-                <div className="progress-part">
-                  <div className="part-img">
-                    <img src="/assets/img/progress-1.png" alt="progress" />
-                    <img
-                      src="/assets/img/progress-come-1.png"
-                      alt="progress coming in"
-                      className="come-img"
-                    />
-                  </div>
-                  <div className="part-text">
-                    <h5 className="mobnot">Verified members.</h5>
-                    <div className="mobnot">
-                      <span>Powered by Veriff</span>
-                      <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
-                    </div>
-                    <div className="mob" style={{ display: 'flex', flexDirection: 'column', gap: 1, minWidth: '42%', alignItems: 'flex-start' }}>
-                      <h5>Verified members.</h5>
-                      <div style={{ display: 'flex', gap: 5, alignItems: 'center' }}>
-                        <span>Powered by Veriff</span>
-                        <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
-                      </div>
-                    </div>
-                    <p>
-                      Open your door to someone real. We perform ID Check with our partner Veriff  (the same system trusted by Amazon, Visa and Bolt).
-                    </p>
-                    <img className="mobnot" src="/assets/img/payments.png" alt="pay" />
-                  </div>
-                </div>
-
-                <div className="progress-part">
-                  <div className="part-text">
-                    <h5>Contract for every swap.</h5>
-                    <p>
-                      To provide you with peace of mind, every confirmed swap includes a clear contract that outlines all expectations and rules. Additionally, once the swap is confirmed, you’ll receive a compatibility score to ensure that both parties share the same expectations.
-                    </p>
-                  </div>
-                  <div className="part-img">
-                    <img src="/assets/img/progress-2.png" alt="progress" />
-                  </div>
-                </div>
-
-                <div className="progress-part">
-                  <div className="part-img">
-                    <img src="/assets/img/progress-3.png" alt="progress" />
-                    <img
-                      src="/assets/img/progress-come-3.png"
-                      alt="progress coming in"
-                      className="come-img"
-                    />
-                  </div>
-                  <div className="part-text">
-                    <h5>Mandatory reviews, live ranking.</h5>
-                    <p>
-                      Open your door to someone real. We perform ID Check with our partner Veriff  (the same system trusted by Amazon, Visa and Bolt).
-                    </p>
-                  </div>
-                </div>
-
-                <div className="progress-line" ref={progressRail}>
-                  <div className="progress-line-inner" ref={progressInner} />
-                </div>
-
               </div>
             </div>
           </section>
