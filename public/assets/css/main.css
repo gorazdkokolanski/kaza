@@ -16880,7 +16880,177 @@ body.page-ready .bottom-new {
   animation: riseIn 0.7s ease-out 0.3s forwards;
 }
 
+.progress-section-container{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  margin-top: 200px;
+}
 
+.progress-section-container>h2{
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.progress-parts{
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 90%;
+  position: relative;
+  padding-bottom: 300px;
+  margin-bottom: -50px;
+}
+
+.progress-part{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.part-text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 40%;
+  align-items: flex-start;
+}
+
+.part-img{
+  width: 40%;
+  position: relative;
+}
+
+.part-img>img:nth-child(1){
+  width: 100%;
+}
+
+.progress-part:nth-child(1) .part-img>img:nth-child(1){
+  margin-left: 50px;
+}
+
+.progress-part:nth-child(3) .part-img>img:nth-child(1){
+  margin-left: 50px;
+}
+
+  .progress-part:nth-child(1) .part-img>img:nth-child(2){
+    position: absolute;
+  top: 60%;
+  left: -40px;
+  transform: translateY(-50%);
+}
+
+.progress-part:nth-child(3) .part-img>img:nth-child(2){
+  position: absolute;
+  top: 0%;
+  left: -40px;
+  transform: translateY(-0%);
+}
+
+.part-text h5{
+  opacity: 0.6;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.part-text p{
+  font-size: 20px;
+  font-weight: 500;
+  opacity: 0.6;
+  line-height: 30px;
+}
+
+.part-text>div{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.part-text span{
+  opacity: 0.5;
+}
+
+.part-text>img{
+  height: 43px;
+}
+
+.progress-line{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  height: calc(100% - 300px);
+  background-color: #D8D8D8;
+  width: 2px;
+}
+
+.progress-line-inner{
+  position: absolute;
+  top: 0;
+  height: 300px;
+  width: 2.5px;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: black;
+}
+
+.progress-part:nth-child(1) .come-img {
+  opacity: 0;
+  transform: translate(-30px, -50%)!important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.progress-part:nth-child(3) .come-img {
+  opacity: 0;
+  transform: translate(-30px, -0%)!important;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.progress-part:nth-child(1) .come-img.visible {
+  opacity: 1;
+  transform: translate(0, -50%)!important;
+}
+
+.progress-part:nth-child(3) .come-img.visible {
+  opacity: 1;
+  transform: translate(0, -0%)!important;
+}
+
+.progress-part .part-text{
+  opacity: 0.1;
+  /* optional: smooth out small jumps */
+  transition: opacity 0.1s ease-out;
+}
+
+.new-app-img-sec{
+}
+
+.app-img-cont{
+  width: 100%;
+  height: 100%;
+  overflow: show;
+  position: relative;
+}
+
+.app-img-cont>div:nth-child(1){
+  opacity: 0;
+  pointer-events: none;
+}
+
+.app-img-cont>img:nth-child(2){
+  width: 115%;
+  position: absolute;
+  bottom: -145%;
+}
+
+.container:has(.app-img-cont){
+  overflow: hidden;
+}
 
 @media only screen and (max-width: 1024px) {
   .marquee-inner img {
@@ -17380,6 +17550,52 @@ body.page-ready .bottom-new {
 
   .ant-drawer-content{
     background-color: rgba(247, 246, 233, 1)!important;
+  }
+
+  .progress-part{
+    flex-direction: column;
+    position: relative;
+    z-index: 5;
+    opacity: 1!important;
+  }
+
+  .part-img{
+    width: 100%;
+    order: -2;
+  }
+
+  .part-text{
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .part-text p{
+    width: 42%;
+  }
+
+  .part-text>h5{
+    width: 42%;
+  }
+
+  .part-text h5{
+    font-size: 16px;
+  }
+
+  .part-text p{
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  .veriff{
+    height: 11.5px;
+  }
+
+  .progress-parts{
+    margin-bottom: -200px;
+  }
+
+  .progress-line{
   }
 
 }

@@ -349,7 +349,7 @@ const Home = () => {
 
   useEffect(() => {
     const container = document.querySelector('.section-app-dash');
-    const movingEl = container?.querySelector('.moving-image');
+    const movingEl = container?.querySelector('.moving-main');
     const img = movingEl?.querySelector('img');
     if (!container || !movingEl || !img) return;
 
@@ -397,10 +397,102 @@ const Home = () => {
     // fire once, on mount
     document.body.classList.add('page-ready');
   }, []);
-  
+
+  const progressRail = useRef(null);
+  const progressInner = useRef(null);
+
+  useEffect(() => {
+    const railEl = progressRail.current;
+    const innerEl = progressInner.current;
+    const container = document.querySelector(".progress-parts");
+    if (!railEl || !innerEl || !container) return;
+
+    const onScroll = () => {
+      const rect = container.getBoundingClientRect();
+      // calculate how far we've scrolled through the container (0–1)
+      const progress = Math.min(
+        Math.max((window.innerHeight - rect.top) / rect.height, 0),
+        1
+      );
+      // apply that to the inner bar’s height
+      innerEl.style.height = `${progress * rect.height - 300}px`;
+    };
+
+    window.addEventListener("scroll", onScroll);
+    onScroll(); // set initial
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const imgs = document.querySelectorAll(".come-img");
+    if (!imgs.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.8 } // tweak when it should fire
+    );
+
+    imgs.forEach((img) => observer.observe(img));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const parts = document.querySelectorAll(".progress-part .part-text");
+    if (!parts.length) return;
+
+    const onScroll = () => {
+      const winH = window.innerHeight;
+      parts.forEach((part) => {
+        const rect = part.getBoundingClientRect();
+        // pct goes from 0 (just off‐screen at bottom) to 1 (top of part reaches top of viewport)
+        let pct = (winH - rect.top) / (winH + rect.height);
+        pct = Math.min(Math.max(pct, 0), 1);
+        // map [0,1] → [0.5,1]
+        const opacity = 0 + pct * 1.8 + 0;
+        part.style.opacity = opacity;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // set initial
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
 
+  const appImgContRef = useRef(null);
+  const appImgRef = useRef(null);
 
+
+// inside your component, replacing the previous px logic
+useEffect(() => {
+  const container = appImgContRef.current;
+  const img = appImgRef.current;
+  if (!container || !img) return;
+
+  const onScroll = () => {
+    const rect = container.getBoundingClientRect();
+    // 0 → 1 how far the container has entered the viewport:
+    let progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height) - 0.3;
+
+    // map 0→1 to bottom: -95% → -65%  (delta = 30)
+    let bottomPercent = -145 + progress * 380;
+    if(bottomPercent> -75){
+      bottomPercent = -75
+    }
+    img.style.bottom = `${bottomPercent}%`;
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll(); // initialize
+  return () => window.removeEventListener("scroll", onScroll);
+}, []);
 
 
 
@@ -440,34 +532,34 @@ const Home = () => {
               </div>
 
               <div class="marquee">
-  <div class="marquee-inner">
-    <img src="/assets/img/img-1.png"  alt="Image 1"  />
-    <img src="/assets/img/img-2.png"  alt="Image 3"  />
-    <img src="/assets/img/img-3.png"  alt="Image 2"  />
-    <img src="/assets/img/img-4.png"  alt="Image 4"  />
-    <img src="/assets/img/img-5.png"  alt="Image 5"  />
-    <img src="/assets/img/img-7.png"  alt="Image 3"  />
-    <img src="/assets/img/img-8.png"  alt="Image 2"  />
-    <img src="/assets/img/img-9.png"  alt="Image 4"  />
-    <img src="/assets/img/img-10.png" alt="Image 5"  />
-    <img src="/assets/img/img-11.jpg" alt="Image 1"  />
-    <img src="/assets/img/img-12.jpg" alt="Image 1"  />
-  </div>
-</div>
+                <div class="marquee-inner">
+                  <img src="/assets/img/img-1.png" alt="Image 1" />
+                  <img src="/assets/img/img-2.png" alt="Image 3" />
+                  <img src="/assets/img/img-3.png" alt="Image 2" />
+                  <img src="/assets/img/img-4.png" alt="Image 4" />
+                  <img src="/assets/img/img-5.png" alt="Image 5" />
+                  <img src="/assets/img/img-7.png" alt="Image 3" />
+                  <img src="/assets/img/img-8.png" alt="Image 2" />
+                  <img src="/assets/img/img-9.png" alt="Image 4" />
+                  <img src="/assets/img/img-10.png" alt="Image 5" />
+                  <img src="/assets/img/img-11.jpg" alt="Image 1" />
+                  <img src="/assets/img/img-12.jpg" alt="Image 1" />
+                </div>
+              </div>
 
-<div class="marquee-wrapper">
-  <div class="marquee-inner1">
-    <img src="/assets/img/img-13.jpg" alt="Image 3"   />
-    <img src="/assets/img/img-14.jpg" alt="Image 2"   />
-    <img src="/assets/img/img-15.jpg" alt="Image 4"   />
-    <img src="/assets/img/img-30.jpg" alt="Image 30"  />
-    <img src="/assets/img/img-31.jpg" alt="Image 31"  />
-    <img src="/assets/img/img-32.jpg" alt="Image 32"  />
-    <img src="/assets/img/img-33.jpg" alt="Image 33"  />
-    <img src="/assets/img/img-34.jpg" alt="Image 34"  />
-    <img src="/assets/img/img-35.jpg" alt="Image 35"  />
-  </div>
-</div>
+              <div class="marquee-wrapper">
+                <div class="marquee-inner1">
+                  <img src="/assets/img/img-13.jpg" alt="Image 3" />
+                  <img src="/assets/img/img-14.jpg" alt="Image 2" />
+                  <img src="/assets/img/img-15.jpg" alt="Image 4" />
+                  <img src="/assets/img/img-30.jpg" alt="Image 30" />
+                  <img src="/assets/img/img-31.jpg" alt="Image 31" />
+                  <img src="/assets/img/img-32.jpg" alt="Image 32" />
+                  <img src="/assets/img/img-33.jpg" alt="Image 33" />
+                  <img src="/assets/img/img-34.jpg" alt="Image 34" />
+                  <img src="/assets/img/img-35.jpg" alt="Image 35" />
+                </div>
+              </div>
 
 
 
@@ -534,7 +626,7 @@ const Home = () => {
                                 </h3>
                               </div>
 
-                              <div class="feature-image" style={{marginTop: 30}}>
+                              <div class="feature-image" style={{ marginTop: 30 }}>
                                 <img
                                   src="/assets/img/earn-credit.png"
                                   class="w-100"
@@ -639,7 +731,7 @@ const Home = () => {
                                   <div className="feature-content">
                                     <div className="feature-details">
                                       <div className="feature-number">02</div>
-                                      <h3 className="feature-title" style={{marginBottom: 30}}>
+                                      <h3 className="feature-title" style={{ marginBottom: 30 }}>
                                         Earn Credits by hosting
                                       </h3>
                                     </div>
@@ -701,10 +793,79 @@ const Home = () => {
                 </div>
               </div>
             </div>
+            <div class="container progress-section-container">
+              <h2>Why choosing us?</h2>
+
+              <div className="progress-parts">
+
+                <div className="progress-part">
+                  <div className="part-img">
+                    <img src="/assets/img/progress-1.png" alt="progress" />
+                    <img
+                      src="/assets/img/progress-come-1.png"
+                      alt="progress coming in"
+                      className="come-img"
+                    />
+                  </div>
+                  <div className="part-text">
+                    <h5 className="mobnot">Verified members.</h5>
+                    <div className="mobnot">
+                      <span>Powered by Veriff</span>
+                      <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
+                    </div>
+                    <div className="mob" style={{ display: 'flex', flexDirection: 'column', gap: 1, minWidth: '42%', alignItems: 'flex-start' }}>
+                      <h5>Verified members.</h5>
+                      <div style={{ display: 'flex', gap: 5, alignItems: 'center' }}>
+                        <span>Powered by Veriff</span>
+                        <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
+                      </div>
+                    </div>
+                    <p>
+                      Open your door to someone real. We perform ID Check with our partner Veriff  (the same system trusted by Amazon, Visa and Bolt).
+                    </p>
+                    <img className="mobnot" src="/assets/img/payments.png" alt="pay" />
+                  </div>
+                </div>
+
+                <div className="progress-part">
+                  <div className="part-text">
+                    <h5>Contract for every swap.</h5>
+                    <p>
+                      To provide you with peace of mind, every confirmed swap includes a clear contract that outlines all expectations and rules. Additionally, once the swap is confirmed, you’ll receive a compatibility score to ensure that both parties share the same expectations.
+                    </p>
+                  </div>
+                  <div className="part-img">
+                    <img src="/assets/img/progress-2.png" alt="progress" />
+                  </div>
+                </div>
+
+                <div className="progress-part">
+                  <div className="part-img">
+                    <img src="/assets/img/progress-3.png" alt="progress" />
+                    <img
+                      src="/assets/img/progress-come-3.png"
+                      alt="progress coming in"
+                      className="come-img"
+                    />
+                  </div>
+                  <div className="part-text">
+                    <h5>Mandatory reviews, live ranking.</h5>
+                    <p>
+                      Open your door to someone real. We perform ID Check with our partner Veriff  (the same system trusted by Amazon, Visa and Bolt).
+                    </p>
+                  </div>
+                </div>
+
+                <div className="progress-line" ref={progressRail}>
+                  <div className="progress-line-inner" ref={progressInner} />
+                </div>
+
+              </div>
+            </div>
           </section>
           <div className="section-back"></div>
         </section>
-        <section
+        {/* <section
           class="section stickyk"
 
           style={{
@@ -760,7 +921,7 @@ const Home = () => {
             </div>
           </section>
           <div className="section-back"></div>
-        </section>
+        </section> */}
         <section class="section stickyk">
           <div class="section-app-dash">
             <div class="container">
@@ -804,14 +965,36 @@ const Home = () => {
                       </a>
                     </div>
                   </div>
-                  <div class="app-img-sec">
+                  <div className="new-app-img-sec mobnot">
+                    <div className="app-img-cont" ref={appImgContRef}>
                     <div class="app-img-2 homescreen">
                       <img
                         src="/assets/img/app-img.png"
                         class="hide-on-mobile"
                       />
-                      <div ref={movingRef} class="row hide-on-desktop moving-image">
-                              <img
+                      <div class="row hide-on-desktop moving-image">
+                        <img
+                          src={
+                            screenWidth < 1024
+                              ? `${process.env.PUBLIC_URL}/assets/img/mobile-animation-phones.png`
+                              : `${process.env.PUBLIC_URL}/assets/img/new-mob-img.png`
+                          }
+                          className="app-mob"
+                          alt="App Mobile"
+                        />
+                      </div>
+                    </div>
+                      <img ref={appImgRef} src="/assets/img/new-desktop-phones.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="app-img-sec mob">
+                    <div class="app-img-2 homescreen">
+                      <img
+                        src="/assets/img/app-img.png"
+                        class="hide-on-mobile"
+                      />
+                      <div ref={movingRef} class="row hide-on-desktop moving-image moving-main">
+                        <img
                           src={
                             screenWidth < 1024
                               ? `${process.env.PUBLIC_URL}/assets/img/mobile-animation-phones.png`

@@ -64,7 +64,7 @@ const Working = () => {
           slidesPerView={1}
           loop={true}
           autoplay={{
-            delay: 2000,
+            delay: 3400,
             disableOnInteraction: false,
           }}
           pagination={{
