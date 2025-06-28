@@ -426,10 +426,10 @@ const Home = () => {
   useEffect(() => {
     const imgs = document.querySelectorAll(".come-img");
     if (!imgs.length) return;
-  
+
     // Trigger when ~30% of the image is visible
     const options = { threshold: 0.5 };
-  
+
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -438,12 +438,12 @@ const Home = () => {
         }
       });
     }, options);
-  
+
     imgs.forEach((img) => observer.observe(img));
-  
+
     return () => observer.disconnect();
   }, []);
-  
+
 
   useEffect(() => {
     const parts = document.querySelectorAll(".progress-part .part-text");
@@ -472,29 +472,29 @@ const Home = () => {
   const appImgRef = useRef(null);
 
 
-// inside your component, replacing the previous px logic
-useEffect(() => {
-  const container = appImgContRef.current;
-  const img = appImgRef.current;
-  if (!container || !img) return;
+  // inside your component, replacing the previous px logic
+  useEffect(() => {
+    const container = appImgContRef.current;
+    const img = appImgRef.current;
+    if (!container || !img) return;
 
-  const onScroll = () => {
-    const rect = container.getBoundingClientRect();
-    // 0 → 1 how far the container has entered the viewport:
-    let progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height) - 0.3;
+    const onScroll = () => {
+      const rect = container.getBoundingClientRect();
+      // 0 → 1 how far the container has entered the viewport:
+      let progress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height) - 0.3;
 
-    // map 0→1 to bottom: -95% → -65%  (delta = 30)
-    let bottomPercent = -145 + progress * 380;
-    if(bottomPercent> -75){
-      bottomPercent = -75
-    }
-    img.style.bottom = `${bottomPercent}%`;
-  };
+      // map 0→1 to bottom: -95% → -65%  (delta = 30)
+      let bottomPercent = -145 + progress * 380;
+      if (bottomPercent > -75) {
+        bottomPercent = -75
+      }
+      img.style.bottom = `${bottomPercent}%`;
+    };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll(); // initialize
-  return () => window.removeEventListener("scroll", onScroll);
-}, []);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // initialize
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
 
 
@@ -581,79 +581,6 @@ useEffect(() => {
         </section>
         <section class="section stickyk">
           <section class="about-section  section-padding vertical-scrolling">
-            
-            <div class="container progress-section-container">
-              <h2>What You Get<br></br>with Every Swap</h2>
-
-              <div className="progress-parts">
-
-                <div className="progress-part">
-                  <div className="part-img">
-                    <img src="/assets/img/progress-1.png" alt="progress" />
-                    <img
-                      src="/assets/img/progress-come-1.png"
-                      alt="progress coming in"
-                      className="come-img"
-                    />
-                  </div>
-                  <div className="part-text">
-                    <h5 className="mobnot">Verified members.</h5>
-                    <div className="mobnot">
-                      <span>Powered by Veriff</span>
-                      <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
-                    </div>
-                    <div className="mob" style={{ display: 'flex', flexDirection: 'column', gap: 1, minWidth: '42%', alignItems: 'flex-start' }}>
-                      <h5>Verified members.</h5>
-                      <div style={{ display: 'flex', gap: 5, alignItems: 'center' }}>
-                        <span>Powered by Veriff</span>
-                        <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
-                      </div>
-                    </div>
-                    <p>
-                    Open your door to someone real. We perform ID Check with our partner <strong>Veriff</strong>  (the same system trusted by Amazon, Visa & Bolt).
-                    </p>
-                    <img className="mobnot" src="/assets/img/payments.png" alt="pay" />
-                  </div>
-                </div>
-
-                <div className="progress-part">
-                  <div className="part-text">
-                    <h5>Contract for every swap.</h5>
-                    <p>
-                    To give you peace of mind, every confirmed swap comes with a clear contract and a compatibility score to ensure both parties have aligned expectations.
-                    </p>
-                  </div>
-                  <div className="part-img">
-                  <img src="/assets/img/progress-2.png" alt="progress" />
-                  <img src="/assets/img/progress-come-2.png"
-                      alt="progress coming in"
-                      className="come-img" />
-                  </div>
-                </div>
-
-                <div className="progress-part">
-                  <div className="part-img">
-                    <img src="/assets/img/progress-3.png" alt="progress" />
-                    <img
-                      src="/assets/img/progress-come-3.png"
-                      alt="progress coming in"
-                      className="come-img"
-                    />
-                  </div>
-                  <div className="part-text">
-                    <h5>Mandatory reviews, live ranking.</h5>
-                    <p>
-                    After each swap, both guests must leave a review. Our system updates the rankings every day. Good reviews help you move up. Bad ones push you down.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="progress-line" ref={progressRail}>
-                  <div className="progress-line-inner" ref={progressInner} />
-                </div>
-
-              </div>
-            </div>
             <div class="container">
               <div class="about-wrapper-3 style-2">
                 <div class="row">
@@ -661,15 +588,14 @@ useEffect(() => {
                     <div class="about-content text-center">
                       <div class="section-title about-heading about-mob">
                         <h2 class="splt-txt wow" data-splitting>
-                          How it works
+                          How to join?
                         </h2>
                       </div>
                       <p
                         class="mt-3 about-p mt-md-0 wow fadeInUp"
                         data-wow-delay=".5s"
                       >
-                        Swap your home, earn credits, and explore the world like
-                        never before!
+                        Your home has value, even when you are not in it.
                       </p>
 
                       <div class="row-grid mt-1 hide-on-mobile">
@@ -868,6 +794,79 @@ useEffect(() => {
                 </div>
               </div>
             </div>
+            <div class="container progress-section-container">
+              <h2>What You Get<br></br>with Every Swap</h2>
+
+              <div className="progress-parts">
+
+                <div className="progress-part">
+                  <div className="part-img">
+                    <img src="/assets/img/progress-1.png" alt="progress" />
+                    <img
+                      src="/assets/img/progress-come-1.png"
+                      alt="progress coming in"
+                      className="come-img"
+                    />
+                  </div>
+                  <div className="part-text">
+                    <h5 className="mobnot">Verified members.</h5>
+                    <div className="mobnot">
+                      <span>Powered by Veriff</span>
+                      <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
+                    </div>
+                    <div className="mob" style={{ display: 'flex', flexDirection: 'column', gap: 1, minWidth: '42%', alignItems: 'flex-start' }}>
+                      <h5>Verified members.</h5>
+                      <div style={{ display: 'flex', gap: 5, alignItems: 'center' }}>
+                        <span>Powered by Veriff</span>
+                        <img src="/assets/img/veriff-icon.png" alt="veriff" className="veriff" />
+                      </div>
+                    </div>
+                    <p>
+                      Open your door to someone real. We perform ID Check with our partner <strong>Veriff</strong>  (the same system trusted by Amazon, Visa & Bolt).
+                    </p>
+                    <img className="" src="/assets/img/payments.png" alt="pay" />
+                  </div>
+                </div>
+
+                <div className="progress-part">
+                  <div className="part-text">
+                    <h5>Contract for every swap.</h5>
+                    <p>
+                      To give you peace of mind, every confirmed swap comes with a clear contract and a compatibility score to ensure both parties have aligned expectations.
+                    </p>
+                  </div>
+                  <div className="part-img">
+                    <img src="/assets/img/progress-2.png" alt="progress" />
+                    <img src="/assets/img/progress-come-2.png"
+                      alt="progress coming in"
+                      className="come-img" />
+                  </div>
+                </div>
+
+                <div className="progress-part">
+                  <div className="part-img">
+                    <img src="/assets/img/progress-3.png" alt="progress" />
+                    <img
+                      src="/assets/img/progress-come-3.png"
+                      alt="progress coming in"
+                      className="come-img"
+                    />
+                  </div>
+                  <div className="part-text">
+                    <h5>Mandatory reviews, live ranking.</h5>
+                    <p>
+                      After each swap, both guests must leave a review. Our system updates the rankings every day. Good reviews help you move up. Bad ones push you down.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="progress-line" ref={progressRail}>
+                  <div className="progress-line-inner" ref={progressInner} />
+                </div>
+
+              </div>
+            </div>
+
           </section>
           <div className="section-back"></div>
         </section>
@@ -973,23 +972,23 @@ useEffect(() => {
                   </div>
                   <div className="new-app-img-sec mobnot">
                     <div className="app-img-cont" ref={appImgContRef}>
-                    <div class="app-img-2 homescreen">
-                      <img
-                        src="/assets/img/app-img.png"
-                        class="hide-on-mobile"
-                      />
-                      <div class="row hide-on-desktop moving-image">
+                      <div class="app-img-2 homescreen">
                         <img
-                          src={
-                            screenWidth < 1024
-                              ? `${process.env.PUBLIC_URL}/assets/img/mobile-animation-phones.png`
-                              : `${process.env.PUBLIC_URL}/assets/img/new-mob-img.png`
-                          }
-                          className="app-mob"
-                          alt="App Mobile"
+                          src="/assets/img/app-img.png"
+                          class="hide-on-mobile"
                         />
+                        <div class="row hide-on-desktop moving-image">
+                          <img
+                            src={
+                              screenWidth < 1024
+                                ? `${process.env.PUBLIC_URL}/assets/img/mobile-animation-phones.png`
+                                : `${process.env.PUBLIC_URL}/assets/img/new-mob-img.png`
+                            }
+                            className="app-mob"
+                            alt="App Mobile"
+                          />
+                        </div>
                       </div>
-                    </div>
                       <img ref={appImgRef} src="/assets/img/new-desktop-phones.png" alt="" />
                     </div>
                   </div>
@@ -1028,7 +1027,7 @@ useEffect(() => {
                   </h2>
                 </div>
                 <p class="mt-3 mt-md-0 wow fadeInUp" data-wow-delay=".5s">
-                  Learn more about our community.
+                How KazaSwap works - made simple.
                 </p>
               </div>
               <div class="faq-wrapper">
@@ -1187,10 +1186,43 @@ useEffect(() => {
                 </div>
               </div>
             </div>
+            <div className="container">
+                <div class="line-bg">
+                  <img src="/assets/img/line-footer.png" />
+                </div>
+                <div className="site-footer">
+                  <div className="footer-links">
+                    <img
+                      src="/assets/img/image-footer-logo.png"
+                      alt="KazaSwap logo"
+                      className="footer-logo"
+                    />
+                    <div className="d-flex justify-content-around gap-100 footer-last-sec3">
+                      <Link to="/confidential" className="footer-link">
+                        Confidentiality
+                      </Link>
+                      <Link to="/terms" className="footer-link">
+                        Terms of Use
+                      </Link>
+                    </div>
+                    <div className="footer-contact footer-last-sec2">
+                      <a
+                        href="mailto:community@kazaswap.co"
+                        className="contact-email"
+                      >
+                        community@kazaswap.co
+                      </a>
+                    </div>
+                    <div className="footer-contact footer-last-sec row hide-on-desktop">
+                      <p>© 2025 Kaza Swap LLC. All rights reserved.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </section>
           <div className="section-back"></div>
         </section>
-        <section class="section bottom-art stickyk">
+        {/* <section class="section bottom-art stickyk">
           <div class="last-section vertical-scrolling">
             <div class="section-padding pb-0 insta-section">
               <div class="container">
@@ -1357,43 +1389,11 @@ useEffect(() => {
                 </div>
               </div>
 
-              <div className="container">
-                <div class="line-bg">
-                  <img src="/assets/img/line-footer.png" />
-                </div>
-                <div className="site-footer">
-                  <div className="footer-links">
-                    <img
-                      src="/assets/img/image-footer-logo.png"
-                      alt="KazaSwap logo"
-                      className="footer-logo"
-                    />
-                    <div className="d-flex justify-content-around gap-100 footer-last-sec3">
-                      <Link to="/confidential" className="footer-link">
-                        Confidentiality
-                      </Link>
-                      <Link to="/terms" className="footer-link">
-                        Terms of Use
-                      </Link>
-                    </div>
-                    <div className="footer-contact footer-last-sec2">
-                      <a
-                        href="mailto:community@kazaswap.co"
-                        className="contact-email"
-                      >
-                        community@kazaswap.co
-                      </a>
-                    </div>
-                    <div className="footer-contact footer-last-sec row hide-on-desktop">
-                      <p>© 2025 Kaza Swap LLC. All rights reserved.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              
             </div>
           </div>
           <div className="section-back"></div>
-        </section>
+        </section> */}
       </main>
     </>
   );

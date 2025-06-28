@@ -16959,8 +16959,8 @@ height: 110px;
 }
 
 .part-text h5{
-  opacity: 0.6;
-  font-size: 25px;
+  opacity: 1;
+  font-size: 28px;
   font-weight: 700;
 }
 
@@ -17073,14 +17073,23 @@ height: 110px;
   overflow: hidden;
 }
 
+.cta-video-wrapper-2.bg-cover.application{
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 1024px) {
   .progress-part:nth-child(1) .part-img>img:nth-child(2){
-    height: 150px;
+    height: 114px;
+  }
+
+  .progress-part:nth-child(1) .come-img.visible{
+    transform: translate(40px, -50%)!important;
   }
 
   .progress-part:nth-child(2) .part-img>img:nth-child(2){
     height: 85px;
-    right: 00px;
+    right: unset;
+    left: 3px;
   }
 
   .progress-part:nth-child(3) .part-img>img:nth-child(2){
@@ -17507,6 +17516,15 @@ height: 110px;
     max-width: 1350px;
   }
 
+  .part-text>img{
+    height: 35px;
+    margin-top: -5px;
+  }
+
+  .progress-parts{
+    gap: 75px;
+  }
+
   .swiper-slide .feature-card.homepage{
     padding-bottom: 20px!important;
   }
@@ -17595,26 +17613,24 @@ height: 110px;
   }
 
   .part-img{
-    width: 100%;
+    width: 95%;
+    margin-left: 5%;
     order: -2;
   }
 
   .part-text{
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
+    width: 95%;
+    margin-left: 5%;
   }
 
   .part-text p{
-    width: 42%;
   }
 
   .part-text>h5{
-    width: 42%;
   }
 
   .part-text h5{
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .part-text p{
@@ -17631,6 +17647,7 @@ height: 110px;
   }
 
   .progress-line{
+    left: 0;
   }
 
 }
