@@ -1018,7 +1018,7 @@ const Home = () => {
           <div className="section-back"></div>
         </section>
         <section class="section stickyk faq-sec">
-          <section class="faq-section fix vertical-scrolling">
+          <section style={{paddingBottom: 0}} class="faq-section fix vertical-scrolling">
             <div class="container">
               <div class="faq-content text-center">
                 <div class="section-title">
