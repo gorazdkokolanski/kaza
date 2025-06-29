@@ -11213,7 +11213,7 @@ p.sticky-label {
   line-height: 24px;
   color: #000;
   opacity: 60%;
-  margin-bottom: 50px!important;
+  margin-bottom: 75px!important;
   margin-top: 21px;
 }
 
@@ -14103,7 +14103,7 @@ p.mt-3.about-p.margin-75.mt-md-0.wow.fadeInUp.faq-des {
     padding-top: 9px;
     padding-bottom: 37px;
     color: #000;
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .exchange-para p {
@@ -16821,7 +16821,6 @@ section.section.bottom-art.stickyk {
   opacity: 0.6;
   font-weight: 400;
   line-height: 24px;
-  margin-top: 40px;
   color: black;
 }
 
@@ -16967,7 +16966,7 @@ height: 110px;
 .part-text p{
   font-size: 20px;
   font-weight: 500;
-  opacity: 0.6;
+  opacity: 0.7;
   line-height: 30px;
 }
 
@@ -17064,7 +17063,7 @@ height: 110px;
 }
 
 .app-img-cont>img:nth-child(2){
-  width: 115%;
+  width: 111%;
   position: absolute;
   bottom: -145%;
 }
@@ -17534,7 +17533,7 @@ height: 110px;
   }
 
   h2{
-    font-size: 32px!important;
+    font-size: 38px!important;
   }
 
   .col-xl-4.col-lg-4.col-md-6.wow.fadeInUp.define-width-price:has(.trip-box){
@@ -17570,6 +17569,7 @@ height: 110px;
 
   .about-section.fix.section-padding.pricing-padding .about-wrapper-3.style-2 .about-content p.mt-3.about-p.mt-md-0.wow.fadeInUp{
     padding-bottom: 0;
+    max-width: 80%;
   }
 
   .about-wrapper-3>.row.justify-content-end.align-items-center.position-relative>*:nth-child(1){
@@ -17630,11 +17630,11 @@ height: 110px;
   }
 
   .part-text h5{
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .part-text p{
-    font-size: 13px;
+    font-size: 15px;
     line-height: 22px;
   }
 
@@ -17648,6 +17648,38 @@ height: 110px;
 
   .progress-line{
     left: 0;
+  }
+
+  .about-mob>h2{
+    font-size: 38px!important;
+  }
+
+  .feature-card.bg-none{
+    margin-bottom: 0!important;
+  }
+
+  .about-wrapper-3.style-2>.pricing-app-row{
+    padding-top: 40px;
+  }
+
+  .about-wrapper-3.style-2>.section-title>h2{
+    font-size: 38px;
+  }
+
+  .section.stickyk.faq-sec{
+    padding-bottom: 0!important;
+  }
+
+  .section.stickyk.faq-sec .container:has(.line-bg){
+    background-color: white!important;
+  }
+
+  .mobile-text-app h2{
+    font-size: 32px!important;
+  }
+
+  .hero-4 .hero-content h1{
+    font-size: 42px!important;
   }
 
 }

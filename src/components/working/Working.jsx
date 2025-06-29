@@ -146,8 +146,7 @@ const Working = () => {
               <div className="credit-trext">
                 <h5>Promoting True Sharing</h5>
                 <p>
-                  Credits can be topped up through payment each credit still
-                  represents a meaningful exchange within the travel community.
+                  Credits cannot be purchased or topped up through payment. Instead, each credit reflects a meaningful exchange within our travel community.
                 </p>
               </div>
             </div>
@@ -222,7 +221,7 @@ const Working = () => {
                             width="250px"
                           />
                         </div>
-                        <div class="credit-trext" style={{marginTop: -30}}>
+                        <div class="credit-trext" style={{ marginTop: -30 }}>
                           <h5>Earn Credits by Hosting</h5>
                           <p>
                             The only way to earn more credits is by <br />
@@ -281,17 +280,17 @@ const Working = () => {
               class="col-xl-8 col-lg-8 col-sm-12 wow fadeInUp define-width-price"
               data-wow-delay=".3s"
             >
-              
+
               <div class="exchange-offer-section">
-              <div class="row hide-on-mobile">
-                <h4
-                  class="splt-txt wow heading-exchange"
-                  data-splitting="true"
-                  style={{ textAlign: "left" }}
-                >
-                  <a href="#!"> How Home Exchange Works</a>
-                </h4>
-              </div>
+                <div class="row hide-on-mobile">
+                  <h4
+                    class="splt-txt wow heading-exchange"
+                    data-splitting="true"
+                    style={{ textAlign: "left" }}
+                  >
+                    <a href="#!"> How Home Exchange Works</a>
+                  </h4>
+                </div>
                 <div class="row hide-on-desktop">
                   <h4
                     class="splt-txt wow heading-exchange"
@@ -317,7 +316,7 @@ const Working = () => {
                       </div>
                     </div>
                     <p>
-                    Use 1 credit per night to book your stay at any member’s home.
+                      Use 1 credit per night to book your stay at any member’s home.
                     </p>
                   </div>
                   <div class="exchnage-coin-2">
@@ -325,12 +324,12 @@ const Working = () => {
                       <div class="coin-img">
                         <img
                           width="74px"
-                        src="/assets/img/how2.png"
+                          src="/assets/img/how2.png"
                         />
                       </div>
                     </div>
                     <p>
-                    Your credits never expire, so you can save them for future travels or use them whenever you're ready.
+                      Your credits never expire, so you can save them for future travels or use them whenever you're ready.
                     </p>
                   </div>
                   <div class="exchnage-coin-2">
@@ -339,11 +338,11 @@ const Working = () => {
                         <img
                           width="74px"
                           src="/assets/img/how3.png"
-                          />
+                        />
                       </div>
                     </div>
                     <p>
-                    With no nightly fees and no cleaning charges, traveling with KazaSwap is straightforward and affordable.
+                      With no nightly fees and no cleaning charges, traveling with KazaSwap is straightforward and affordable.
                     </p>
                   </div>
                 </div>
@@ -353,11 +352,11 @@ const Working = () => {
                       <img
                         width="74px"
                         src="/assets/img/how1.png"
-                        />
+                      />
                     </div>
                     <div class="">
                       <p>
-                      Use 1 credit per night to book your stay at any member’s home.
+                        Use 1 credit per night to book your stay at any member’s home.
                       </p>
                     </div>
                   </div>
@@ -370,7 +369,7 @@ const Working = () => {
                     </div>
                     <div class="">
                       <p>
-                      Your credits never expire, so you can save them for future travels or use them whenever you're ready.
+                        Your credits never expire, so you can save them for future travels or use them whenever you're ready.
                       </p>
                     </div>
                   </div>
@@ -383,7 +382,7 @@ const Working = () => {
                     </div>
                     <div class="">
                       <p>
-                      With no nightly fees and no cleaning charges, traveling with KazaSwap is straightforward and affordable.
+                        With no nightly fees and no cleaning charges, traveling with KazaSwap is straightforward and affordable.
                       </p>
                     </div>
                   </div>

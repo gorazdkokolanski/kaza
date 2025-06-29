@@ -595,7 +595,7 @@ const Home = () => {
                         class="mt-3 about-p mt-md-0 wow fadeInUp"
                         data-wow-delay=".5s"
                       >
-                        Your home has value, even when you are not in it.
+                        Your home has value even when you are not in it.
                       </p>
 
                       <div class="row-grid mt-1 hide-on-mobile">
@@ -1048,7 +1048,7 @@ const Home = () => {
                               aria-expanded="false"
                               aria-controls="faq1"
                             >
-                              What is the KazaSwap community?
+                              What is KazaSwap?
                             </button>
                           </h5>
                           <div
