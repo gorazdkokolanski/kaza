@@ -17682,6 +17682,18 @@ height: 110px;
     font-size: 42px!important;
   }
 
+  .ant-drawer-content-wrapper a.theme-btn.padding-style.d-xs-none.wow.visible.fadeInUp:hover{
+    background-color: var(--theme);
+  }
+
+  .ant-drawer-content-wrapper a.theme-btn.padding-style.d-xs-none.wow.visible.fadeInUp:hover::after{
+    display: none;
+  }
+
+  a.theme-btn.padding-style.d-xs-none.wow.visible.fadeInUp:hover svg path, a.theme-btn.padding-style.d-xs-none.wow.visible.fadeInUp:hover svg circle{
+    stroke: black!important;
+  }
+
 }
 
 .about-content.text-center.works-flow>*>*:nth-child(2)>img{
